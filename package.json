@@ -1,0 +1,31 @@
+{
+  "name": "trenere",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AutocorrectGuy/Trenere.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AutocorrectGuy/Trenere/issues"
+  },
+  "homepage": "https://github.com/AutocorrectGuy/Trenere#readme",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "http-proxy-middleware": "^2.0.6",
+    "mongoose": "^6.4.1",
+    "nodemon": "^2.0.18"
+  }
+}
