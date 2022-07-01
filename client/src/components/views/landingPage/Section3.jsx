@@ -51,7 +51,8 @@ function ImagesSet() {
         <div className="flex items-center justify-center w-full h-full overflow-hidden">
           <div className="-rotate-45 min-w-[141%] min-h-[141%] flex-shrink-0">
             <img src={img}
-              style={{ width: `${size * 1.41}px`, height: `${size * 1.41}px` }} />
+              style={{ width: `${size * 1.41}px`, height: `${size * 1.41}px` }} 
+              />
           </div>
         </div>
       </div>
@@ -59,7 +60,7 @@ function ImagesSet() {
   }
 
   return (
-    <div className="w-full"
+    <div
       style={{
         height: `${Math.ceil(size / 2) * IMAGE_POSITIONS.length}px`,
         width: `${size * 2.7}px`
@@ -85,16 +86,14 @@ function VideoContainer() {
     <div className="flex grow max-w-[400px] ml-auto mr-10">
       <div className="relative w-full my-auto">
         <div className="absolute flex w-full pb-[100%] rounded-full -translate-y-1/2 bg-neutral-400 bg-opacity-[25%]"
-          style={{ backdropFilter: "blur(5px)" }}
         >
           <div className="absolute w-[88%] h-[88%] left-[6%] top-[6%] my-autorounded-full">
             <img src={video_image} className="w-full h-full rounded-full" />
           </div>
           <div className={`absolute flex items-center justify-center w-[100px] h-[100px] left-0 right-0 mx-auto top-0 bottom-0 my-auto rounded-full
           bg-neutral-400 bg-opacity-[25%]`}
-            style={{ backdropFilter: "blur(5px)" }}
           >
-            <div className="flex items-center justify-center w-[90px] h-[90px] rounded-full backdrop-blur-none">
+            <div className="flex items-center justify-center w-[90px] h-[90px] rounded-full">
               <FontAwesomeIcon icon={faPlay} className="w-10 h-10 text-white" />
             </div>
           </div>
@@ -111,7 +110,6 @@ function MessageSection() {
       <div className="flex grow max-w-[400px] ml-auto mr-auto">
         <div className="relative w-full my-auto">
           <div className="absolute flex w-full pb-[100%] rounded-full -translate-y-1/2 bg-neutral-400 bg-opacity-[25%]"
-            style={{ backdropFilter: "blur(5px)" }}
           >
             <div className="absolute w-[88%] h-[88%] left-[6%] top-[6%] my-autorounded-full">
               <img src={message_image} className="w-full h-full rounded-full" />
@@ -143,7 +141,7 @@ function MessageSection() {
           />
           <button className={`px-8 py-4 bg-pink-600 text-white bg-opacity-75 ring-1 ring-white ml-4 hover:text-pink-600 
             hover:bg-white transition-colors duration-200`}
-            style={{ backdropFilter: "blur(5px)" }}>
+            >
             Join us
           </button>
         </div>
@@ -161,7 +159,7 @@ function MessageSection() {
 
 export default function Section3() {
   return (
-    <div className={"flex flex-col max-w-7xl w-full mx-auto bg-black mt-auto"}>
+    <div className={"flex flex-col max-w-7xl w-full mx-auto bg-black mt-auto overflow-hidden"}>
       <div className="relative h-[1400px] overflow-clip">
         <div className="absolute top-0 right-0 bottom-0 left-0 brightness-75 blur-[2px]"
           style={{ backgroundImage: `url(${image})`, backgroundPosition: "50%, 0%" }}
@@ -174,6 +172,7 @@ export default function Section3() {
             <VideoContainer />
           </div>
           <MessageSection />
+
         </div>
       </div>
     </div>

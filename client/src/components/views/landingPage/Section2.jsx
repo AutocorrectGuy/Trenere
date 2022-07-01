@@ -35,10 +35,11 @@ export default function Section2() {
 
   function RectanglePattern() {
     return (
-      <>
+      <div className="overflow-hidden">
         <Rectangle left={"-400px"} top={"150px"} />
         <Rectangle left={"800px"} top={"800px"} />
-        <Rectangle left={"50%"} bottom={"-550px"} centerX={"-translate-x-1/2"} /></>
+        <Rectangle left={"50%"} bottom={"-550px"} centerX={"-translate-x-1/2"} />
+      </div>
     )
   }
   function Rectangle({ left, top, centerX, bottom }) {
@@ -101,7 +102,7 @@ export default function Section2() {
   function ContentContainer({ item, index }) {
     const { h1, h2, p, btnText, img } = item;
     return (
-      <div className="flex w-full justify-between max-w-5xl mx-auto py-10">
+      <div className="flex justify-between max-w-5xl mx-auto py-10">
         {
           index % 2 === 0
             ? <>
@@ -119,7 +120,7 @@ export default function Section2() {
   }
 
   return (
-    <div className="w-screen bg-neutral-200 bg-opacity-90" >
+    <div className="w-full bg-neutral-200 bg-opacity-90 overflow-hidden" >
 
       <div className={"relative flex flex-col max-w-7xl w-full mx-auto bg-neutral-200 pb-60 overflow-hidden"}>
         <RectanglePattern />
