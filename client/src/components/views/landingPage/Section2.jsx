@@ -50,10 +50,9 @@ export default function Section2() {
   }
   function Heading() {
     return (
-      <div className="mx-auto py-32 text-5xl font-extrabold text-neutral-800">CLASSES</div>
+      <div className="mx-auto py-32 text-4xl font-extrabold text-neutral-800">CLASSES</div>
     )
   }
-
   function ImageContainer({ img }) {
     return (
       <div className="w-1/2">
@@ -99,9 +98,6 @@ export default function Section2() {
       </div>
     )
   }
-
-
-
   function ContentContainer({ item, index }) {
     const { h1, h2, p, btnText, img } = item;
     return (
@@ -123,17 +119,19 @@ export default function Section2() {
   }
 
   return (
-    <div className={"relative flex flex-col max-w-7xl w-full mx-auto bg-neutral-200 pb-60 overflow-hidden"}>
-      <RectanglePattern />
-      <div className="flex flex-col z-[1]">
-        <Heading />
-        {
-          DATA.map((item, i) =>
-            <ContentContainer key={`landing-sec2-${i}`} item={item} index={i} />
-          )
-        }
-      </div>
+    <div className="w-screen bg-neutral-200 bg-opacity-90" >
 
+      <div className={"relative flex flex-col max-w-7xl w-full mx-auto bg-neutral-200 pb-60 overflow-hidden"}>
+        <RectanglePattern />
+        <div className="flex flex-col z-[1]">
+          <Heading />
+          {
+            DATA.map((item, i) =>
+              <ContentContainer key={`landing-sec2-${i}`} item={item} index={i} />
+            )
+          }
+        </div>
+      </div>
     </div>
   )
 }
