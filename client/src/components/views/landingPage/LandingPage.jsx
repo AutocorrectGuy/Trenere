@@ -9,7 +9,7 @@ export default function LandingPage() {
   const verticalGradient = "bg-gradient-to-b from-[#815C82] to-[#41104E]"
   return (
     <div className={`flex flex-col items-center justify-center ${verticalGradient} font-monsterrat`}>
-      {/* <Section1 /> */}
+      <Section1 />
       <Section2 />
       <Section3 />
       <Section4 />

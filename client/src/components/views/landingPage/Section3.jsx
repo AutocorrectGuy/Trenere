@@ -1,4 +1,4 @@
-import image from "../../../assets/base64/yoga_1.jpg"
+import bgImage from "../../../assets/base64/yoga_1.png"
 import img1 from "../../../assets/base64/s3_1.jpg"
 import img2 from "../../../assets/base64/s3_2.jpg"
 import img3 from "../../../assets/base64/s3_3.jpg"
@@ -51,8 +51,8 @@ function ImagesSet() {
         <div className="flex items-center justify-center w-full h-full overflow-hidden">
           <div className="-rotate-45 min-w-[141%] min-h-[141%] flex-shrink-0">
             <img src={img}
-              style={{ width: `${size * 1.41}px`, height: `${size * 1.41}px` }} 
-              />
+              style={{ width: `${size * 1.41}px`, height: `${size * 1.41}px` }}
+            />
           </div>
         </div>
       </div>
@@ -135,13 +135,12 @@ function MessageSection() {
           </div>
         </div>
         <div className="flex text-white font-medium">
-          <input className="bg-indigo-300 bg-opacity-10 px-4 outline-white ring-1 ring-white placeholder:text-white max-w-[55%] w-full" 
-          type={"text"} placeholder={"Email"}
-            style={{ backdropFilter: "blur(5px)" }}
+          <input className="bg-indigo-300 bg-opacity-10 px-4 outline-white ring-1 ring-white placeholder:text-white max-w-[55%] w-full"
+            type={"text"} placeholder={"Email"}
           />
           <button className={`px-8 py-4 bg-pink-600 text-white bg-opacity-75 ring-1 ring-white ml-4 hover:text-pink-600 
             hover:bg-white transition-colors duration-200`}
-            >
+          >
             Join us
           </button>
         </div>
@@ -159,20 +158,22 @@ function MessageSection() {
 
 export default function Section3() {
   return (
-    <div className={"flex flex-col max-w-7xl w-full mx-auto bg-black mt-auto overflow-hidden"}>
-      <div className="relative h-[1400px] overflow-clip">
-        <div className="absolute top-0 right-0 bottom-0 left-0 brightness-75 blur-[2px]"
-          style={{ backgroundImage: `url(${image})`, backgroundPosition: "50%, 0%" }}
-        />
-        <div className="absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-b from-fuchsia-600 to-indigo-900 opacity-80 h-full w-full brightness-50" />
-        <div className="absolute flex flex-col top-0 right-0 bottom-0 left-0 h-full w-full">
-          <Heading />
-          <div className="flex">
-            <ImagesSet />
-            <VideoContainer />
+    <div className="relative w-full bg-cover"
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
+      <div className="absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-b from-neutral-900 to-black opacity-90 h-full w-full brightness-50"
+    />
+      <div className={"flex flex-col max-w-[1400px] w-full mx-auto mt-auto overflow-hidden"}>
+        <div className="relative h-[1500px]">
+        <div className="absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-b from-neutral-400 to-black opacity-50 h-full w-full brightness-50" />
+          <div className="absolute flex flex-col top-0 right-0 bottom-0 left-0 h-full w-full">
+            <Heading />
+            <div className="flex">
+              <ImagesSet />
+              <VideoContainer />
+            </div>
+            <MessageSection />
           </div>
-          <MessageSection />
-
         </div>
       </div>
     </div>

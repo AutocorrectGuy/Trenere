@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import IMAGES from "../../../assets/base64/LandingPageImgs.json"
 const DATA = [
   {
@@ -45,7 +44,7 @@ export default function Section2() {
   function Rectangle({ left, top, centerX, bottom }) {
     return (
       <div className={`${centerX && centerX}
-        absolute z-0 w-[700px] h-[700px] border-[60px] border-neutral-300 rotate-45 opacity-50`}
+        absolute z-0 w-[700px] h-[700px] border-[60px] border-neutral-200 rotate-45 opacity-50`}
         style={{ left: left, top: top, bottom: bottom }} />
     )
   }
@@ -102,7 +101,7 @@ export default function Section2() {
   function ContentContainer({ item, index }) {
     const { h1, h2, p, btnText, img } = item;
     return (
-      <div className="flex justify-between max-w-5xl mx-auto py-10">
+      <div className="flex justify-between max-w-[1300px] mx-auto py-10">
         {
           index % 2 === 0
             ? <>
@@ -122,7 +121,7 @@ export default function Section2() {
   return (
     <div className="w-full bg-neutral-200 bg-opacity-90 overflow-hidden" >
 
-      <div className={"relative flex flex-col max-w-7xl w-full mx-auto bg-neutral-200 pb-60 overflow-hidden"}>
+      <div className={"relative flex flex-col max-w-[1400px] w-full mx-auto bg-neutral-100 pb-60 overflow-hidden"}>
         <RectanglePattern />
         <div className="flex flex-col z-[1]">
           <Heading />
