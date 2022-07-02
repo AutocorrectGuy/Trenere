@@ -1,31 +1,33 @@
+import { useEffect } from "react"
 import IMAGES from "../../../assets/base64/LandingPageImgs.json"
+
 const DATA = [
   {
-    "h1": "Crossfit Classes",
-    "h2": "What is crossfit?",
-    "p": "CrossFit is a lifestyle characterized by safe, effective exercise and sound nutrition. CrossFit can be used to accomplish any goal, from improved health to weight loss to better performance.",
-    "btnText": "Get Started",
+    "h1": "Algoritmizētas treniņu programmas",
+    "h2": "Kā tas darbojas?",
+    "p": "Vispirms ir jāaizpilda anketa un pēc tam tiek atlasīta atbilstoša informācija, kura nosaka to, kādas iespējas ievēles būs nākošajos anketas izpildes soļos. Anketa 100% balstīta uz zinātnisko literatūru sporta zinātnē. Izveidoto treniņu programmu iespējams apskatīt gan te, gan arī lejuplādēt .docx un pdf failu formātos.",
+    "btnText": "Sāc tagad",
     "img": IMAGES[0]
   },
   {
-    "h1": "Fitness Classes",
-    "h2": "About Fitness",
+    "h1": "Personalizētas treniņu programmas",
+    "h2": "Balstoties uz padziļinātu personisko informāciju",
     "p": "Starting a fitness routine can be intimidating, but it helps to have an idea of what to expect before joining any class. Across the communities we serve nationwide, we offer an array of different group fitness class types to meet the dynamic needs of our communities.",
-    "btnText": "Get Started",
+    "btnText": "Piesaki tagad",
     "img": IMAGES[1]
   },
   {
-    "h1": "Yoga Classes",
+    "h1": "Privātie fitnesa treniņi",
     "h2": "About Yoga Classes",
     "p": "Yoga is our most commonly requested group fitness class, and most people are already familiar with the concept of it. This type of exercise has nearly a dozen variations of its own, with the most popular styles including Hot Yoga, to Vinyasa Flow, and Gentle Yoga.",
-    "btnText": "Get Started",
+    "btnText": "Piesakies treniņam",
     "img": IMAGES[2]
   },
   {
-    "h1": "HIIT Classes",
-    "h2": "About HIIT",
+    "h1": "Sadarbojies ar mums",
+    "h2": "Atgriezensikā saite (feedback)",
     "p": "HIIT stands for High-Intensity Interval Training, and is an exercise strategy that alternates short periods of intense exercise movements, followed by less intense, but still active “recovery” periods.",
-    "btnText": "Get Started",
+    "btnText": "Sadarbojies ar mums",
     "img": IMAGES[3]
   }
 ]
@@ -50,13 +52,16 @@ export default function Section2() {
   }
   function Heading() {
     return (
-      <div className="mx-auto pt-32 pb-10 text-4xl font-extrabold text-neutral-800">CLASSES</div>
+      <div 
+        data-aos="fade-in"
+        className="mb-20 text-5xl font-extrabold text-neutral-800 uppercase text-center">
+        Mēs piedāvājam
+        </div>
     )
   }
   function ImageContainer({ img }) {
     return (
       <div className="w-1/2">
-
         <div className="relative w-[370px] h-[370px] mx-auto">
           <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full brightness-150
         rounded-full"
@@ -71,7 +76,6 @@ export default function Section2() {
           <div className="absolute mx-auto my-auto top-0 right-0 bottom-0 left-0 w-[290px] h-[290px] rounded-full">
             <img className="rounded-full" src={`${img}`} />
           </div>
-
         </div>
       </div>
     )
@@ -79,7 +83,7 @@ export default function Section2() {
   function TextContainer({ h1, h2, p, btnText }) {
     return (
       <div className="flex flex-col justify-around w-1/2">
-        <div className="text-4xl font-extrabold text-neutral-800 mx-auto">
+        <div className="text-4xl text-center font-extrabold text-neutral-800 mx-auto">
           {h1}
         </div>
         <div className="text-2xl font-bold text-pink-500 mx-auto">
@@ -101,7 +105,10 @@ export default function Section2() {
   function ContentContainer({ item, index }) {
     const { h1, h2, p, btnText, img } = item;
     return (
-      <div className="flex justify-between max-w-[1300px] mx-auto py-10">
+      <div
+        data-aos={`${index % 2 === 0 ? "fade-left" : "fade-right"}`}
+        className="flex justify-between max-w-[1300px] mx-auto py-10"
+      >
         {
           index % 2 === 0
             ? <>
@@ -121,7 +128,7 @@ export default function Section2() {
   return (
     <div className="w-full bg-neutral-100 overflow-hidden" >
 
-      <div className={"relative flex flex-col max-w-[1400px] w-full mx-auto bg-neutral-100 pb-20"}>
+      <div className={"relative flex flex-col max-w-[1400px] w-full mx-auto bg-neutral-100 pb-20 pt-44"}>
         <RectanglePattern />
         <div className="flex flex-col z-[1]">
           <Heading />

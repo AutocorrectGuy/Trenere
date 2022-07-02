@@ -23,7 +23,7 @@ const IMAGE_POSITIONS = [
 ]
 function Heading() {
   return (
-    <div className="text-white text-4xl font-extrabold pt-20 mx-auto uppercase">
+    <div className="text-white text-5xl font-extrabold pt-20 mx-auto uppercase">
       Galerija
     </div>
   )
@@ -44,6 +44,7 @@ function ImagesSet() {
       <div className="absolute flex my-12 mx-24 p-5 items-center justify-center  overflow-clip shadow-neutral-700 shadow-sm
       bg-neutral-200 bg-opacity-[6%] border border-neutral-700 transition-colors
       duration-200 ease-out cursor-pointer"
+        data-aos="fade-in"
         style={{
           left: `${posLeft}px`,
           top: `${posTop}px`,
@@ -109,7 +110,9 @@ function VideoContainer() {
 
   return (
     <div className="flex grow max-w-[400px] ml-auto mr-10">
-      <div className="relative w-full">
+      <div className="relative w-full"
+        data-aos="fade-left"
+        >
         <div className={`${mouseEnter ? "bg-opacity-0" : "bg-neutral-300 bg-opacity-10"} 
           transition-colors duration-300 ease-out cursor-pointer
           absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex w-full pb-[100%] rounded-full`}
@@ -142,7 +145,9 @@ function MessageSection() {
 
   function ImageLeft() {
     return (
-      <div className="flex grow max-w-[400px] mx-auto">
+      <div className="flex grow max-w-[400px] mx-auto"
+        data-aos="fade-right"
+      >
         <div className="relative w-full my-auto">
           <div className="absolute flex w-full pb-[100%] rounded-full -translate-y-1/2 bg-neutral-400 bg-opacity-[25%]"
           >
@@ -157,7 +162,9 @@ function MessageSection() {
 
   function EmailSection() {
     return (
-      <div className="flex flex-col justify-evenly w-7/12 h-full p-10">
+      <div className="flex flex-col justify-evenly w-7/12 h-full p-10"
+        data-aos="fade-left"
+        >
         <div className="text-pink-600 text-3xl font-semibold">
           If you had a bad day, don't worry. Make it better by going to the gym.
         </div>
