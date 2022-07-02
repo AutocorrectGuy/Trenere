@@ -50,7 +50,7 @@ export default function Section2() {
   }
   function Heading() {
     return (
-      <div className="mx-auto py-32 text-4xl font-extrabold text-neutral-800">CLASSES</div>
+      <div className="mx-auto pt-32 pb-10 text-4xl font-extrabold text-neutral-800">CLASSES</div>
     )
   }
   function ImageContainer({ img }) {
@@ -119,9 +119,9 @@ export default function Section2() {
   }
 
   return (
-    <div className="w-full bg-neutral-200 bg-opacity-90 overflow-hidden" >
+    <div className="w-full bg-neutral-100 overflow-hidden" >
 
-      <div className={"relative flex flex-col max-w-[1400px] w-full mx-auto bg-neutral-100 pb-60 overflow-hidden"}>
+      <div className={"relative flex flex-col max-w-[1400px] w-full mx-auto bg-neutral-100 pb-20"}>
         <RectanglePattern />
         <div className="flex flex-col z-[1]">
           <Heading />
