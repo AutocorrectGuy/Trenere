@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { useRef } from "react"
 import { useEffect } from "react"
+import SignUpBtn from "../../Auth/SignUpBtn"
 
-const NAVIGATIONS = ["Sākums", "Mēs piedāvājam", "Aktualitātes", "Galerija", "Sadarbības partneri", "Kontakti"]
+const NAVIGATIONS = ["Sākums", "Mēs piedāvājam", "Aktualitātes", "Galerija", "Sadarbības partneri", "Idejas autore"]
 
 export default function Navigation() {
   
@@ -36,7 +37,7 @@ export default function Navigation() {
         TRENERE
       </div>
       <div 
-        className="flex items-center uppercase font-normal px-20"
+        className="flex items-center uppercase text-sm font-normal px-20"
         >
         {
           NAVIGATIONS.map((item, i) =>
@@ -48,6 +49,7 @@ export default function Navigation() {
             </div>
           )
         }
+        <SignUpBtn />
       </div>
 
     </div>

@@ -51,8 +51,8 @@ export default function Section1() {
 
       return (
         <div
-          className={`${mouseEnter ? "bg-neutral-900" : "bg-purple-900"} cursor-pointer transition-all
-          duration-200 flex flex-col items-center w-[200px] h-full p-5 mx-1 first:ml-0 last:mr-0`}
+          className={`${mouseEnter ? "bg-neutral-900" : "  bg-gradient-to-b from-pink-600 to-purple-600"} cursor-pointer
+           flex flex-col items-center w-[200px] h-full p-5 mx-1 first:ml-0 last:mr-0`}
           onMouseEnter={() => { setMouseEnter(true) }}
           onMouseLeave={() => { setMouseEnter(false) }}
         >
@@ -62,12 +62,12 @@ export default function Section1() {
               className={`${mouseEnter
                 ? "text-pink-600"
                 : "text-white"} 
-              w-12 h-12 pb-3 transition-colors duration-200`} />
+              w-12 h-12 pb-3`} />
           </div>
           <div className={`${mouseEnter
             ? "text-pink-600"
             : "text-white"} 
-              h-1/2 text-white text-center pt-3 transition-colors duration-200 select-none`}>
+              h-1/2 text-white text-center pt-3 select-none`}>
             {p}
           </div>
         </div>
@@ -97,7 +97,6 @@ export default function Section1() {
           style={{ backgroundImage: `url(${bgImage})` }}
         />
         <div className="z-1 absolute left-0 top-0 right-0 bottom-0 w-full bg-[#080108] bg-opacity-80"
-
         />
         <div className={"flex flex-col items-center justify-center max-w-[1400px] w-full mx-auto"}
             data-aos="fade-in"
