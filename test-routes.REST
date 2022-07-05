@@ -1,0 +1,25 @@
+GET http://localhost:3001/api/get-all-exercises
+### 
+
+// Update
+POST http://localhost:3001/api/upload-exercise
+content-type: application/json
+
+{ 
+    "ul": "Barbell incline bench row",
+    "group": "Upper back",
+    "main_mm": "Lattisimus dorsi",
+    "secondary_mm": ["Biceps brachii"],
+    "equipment": ["body", "45 degree bench"],
+    "phys_a": "strength"
+}
+
+###
+// Create
+POST http://localhost:3001/api/createcategories
+content-type: application/json
+
+{ 
+  "data": "test"
+}
+###

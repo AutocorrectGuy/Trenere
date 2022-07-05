@@ -1,9 +1,23 @@
+import React from "react";
+
 import { useState } from "react"
 import { useRef } from "react"
 import { useEffect } from "react"
 import SignUpBtn from "../../Auth/SignUpBtn"
 
-const NAVIGATIONS = ["Sākums", "Mēs piedāvājam", "Aktualitātes", "Galerija", "Sadarbības partneri", "Idejas autore"]
+const NAVIGATIONS = [
+  {
+    "ul" : "Sākums",
+    "href": "/"
+  },   
+  {
+    "ul" : "Vingrinājumu bibliotēka",
+    "href": "/exercise-library"
+  },
+  {
+    "ul" : "Idejas autore",
+    "href": "/"
+  }]
 
 export default function Navigation() {
   
@@ -40,13 +54,14 @@ export default function Navigation() {
         className="flex items-center uppercase text-sm font-normal px-20"
         >
         {
-          NAVIGATIONS.map((item, i) =>
-            <div
+          NAVIGATIONS.map(({ul, href}, i) =>
+            <a
               key={`nav-item-${i}`}
+              href={href}
               className="flex items-center px-4 first:pl-0 last:pr-0 hover:text-pink-600 transition-colors
               duration-300 select-none h-full cursor-pointer active:translate-y-[2px]">
-              {item}
-            </div>
+              {ul}
+            </a>
           )
         }
         <SignUpBtn />

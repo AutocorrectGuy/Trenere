@@ -1,3 +1,4 @@
+import React from "react"
 import bgImage from "../../../assets/base64/yoga_1.png"
 import img1 from "../../../assets/base64/s3_1.jpg"
 import img2 from "../../../assets/base64/s3_2.jpg"
@@ -71,6 +72,7 @@ function ImagesSet() {
             }}
           >
             <img className=""
+              alt=""
               src={img}
               style={{ 
                 width: `${size * 1.41}px`, 
@@ -126,7 +128,7 @@ function VideoContainer() {
           />
 
           <div className="absolute w-[88%] h-[88%] left-[6%] top-[6%] my-autorounded-full">
-            <img src={video_image} className="w-full h-full rounded-full" />
+            <img src={video_image} alt="" className="w-full h-full rounded-full" />
           </div>
           <div className={`absolute flex items-center justify-center w-[100px] h-[100px] left-0 right-0 mx-auto top-0 bottom-0 my-auto rounded-full
           bg-neutral-400 bg-opacity-[25%]`}
@@ -152,7 +154,7 @@ function MessageSection() {
           <div className="absolute flex w-full pb-[100%] rounded-full -translate-y-1/2 bg-neutral-400 bg-opacity-[25%]"
           >
             <div className="absolute w-[88%] h-[88%] left-[6%] top-[6%] my-autorounded-full">
-              <img src={message_image} className="w-full h-full rounded-full" />
+              <img src={message_image} alt="" className="w-full h-full rounded-full" />
             </div>
           </div>
         </div>

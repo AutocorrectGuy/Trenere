@@ -1,0 +1,197 @@
+[
+  {
+    "ul": "Barbell bench press",
+    "group": "chest",
+    "main_mm": "middle chest",
+    "secondary_mm": ["triceps", "shoulders"],
+    "equipment": "barbell",
+    "phys_a": "strength", 
+    "p": {
+      "s_st": "",
+      "g_d": "",
+      "n_d": ""
+    }
+  },
+  {
+    "ul": "Incline dumber flyes",
+    "group": "chest",
+    "main_mm": "upper chest",
+    "secondary_mm": ["biceps", "shoulders"],
+    "equipment": "cabel machine",
+    "phys_a": "strength", 
+    "p": {
+      "s_st": "",
+      "g_d": "",
+      "n_d": ""
+    }
+  },
+  {
+    "ul": "Cable cross-over",
+    "group": "chest",
+    "main_mm": "lower chest",
+    "secondary_mm": ["shoulders"],
+    "equipment": "cabel machine",
+    "phys_a": "strength", 
+    "p": {
+      "s_st": "",
+      "g_d": "",
+      "n_d": ""
+    }
+  },
+  {
+    "ul": "Machine chest press",
+    "group": "chest",
+    "main_mm": "middle chest",
+    "secondary_mm": ["triceps", "shoulders"],
+    "equipment": "chest press machine",
+    "phys_a": "strength", 
+    "p": {
+      "s_st": "",
+      "g_d": "",
+      "n_d": ""
+    }
+  },
+  {
+    "ul": "Barbell squat",
+    "group": "glutes",
+    "main_mm": "Gluteus maximus",
+    "secondary_mm": ["quadriceps", "hamstrings"],
+    "equipment": ["barbell", "squat rack"],
+    "phys_a": "strength", 
+    "p": {
+      "s_st": "",
+      "g_d": "",
+      "n_d": ""
+    }
+  },
+  {
+    "ul": "Dumbell walking lunges",
+    "group": "glutes",
+    "main_mm": "Gluteus maximus",
+    "secondary_mm": ["quadriceps", "hamstrings"],
+    "equipment": ["dumbells"],
+    "phys_a": "strength", 
+    "p": {
+      "s_st": "",
+      "g_d": "",
+      "n_d": ""
+    }
+  },
+  {
+    "ul": "Barbell hip thrust",
+    "group": "glutes",
+    "main_mm": "Gluteus maximus",
+    "secondary_mm": ["hamstrings"],
+    "equipment": ["barbell"],
+    "phys_a": "strength", 
+    "p": {
+      "s_st": "",
+      "g_d": "",
+      "n_d": ""
+    }
+  },
+  {
+    "ul": "Alternating react and catch",
+    "group": "Abdominals",
+    "main_mm": "Internal, external oblique",
+    "secondary_mm": [],
+    "equipment": ["body only"],
+    "phys_a": "strength", 
+    "p": {
+      "s_st": "",
+      "g_d": "",
+      "n_d": ""
+    }
+  },
+  {
+    "ul": "Air bike",
+    "group": "Abdominals",
+    "main_mm": "Rectus abdominis",
+    "secondary_mm": [],
+    "equipment": ["body only"],
+    "phys_a": "strength", 
+    "p": {
+      "s_st": "",
+      "g_d": "",
+      "n_d": ""
+    }
+  },
+  {
+    "ul": "Leg pull-in",
+    "group": "Abdominals",
+    "main_mm": "Rectus abdominis",
+    "secondary_mm": ["iliopsoas"],
+    "equipment": ["body only"],
+    "phys_a": "strength", 
+    "p": {
+      "s_st": "",
+      "g_d": "",
+      "n_d": ""
+    }
+  },
+  {
+    "ul": "Supine leg raise",
+    "group": "Abdominals",
+    "main_mm": "Rectus abdominis",
+    "secondary_mm": ["iliopsoas"],
+    "equipment": ["body only"],
+    "phys_a": "strength", 
+    "p": {
+      "s_st": "",
+      "g_d": "",
+      "n_d": ""
+    }
+  },
+  {
+    "ul": "Static plank",
+    "group": "Abdominals",
+    "main_mm": "Rectus abdominis",
+    "secondary_mm": [],
+    "equipment": ["body only"],
+    "phys_a": "strength", 
+    "p": {
+      "s_st": "",
+      "g_d": "",
+      "n_d": ""
+    }
+  },
+  {
+    "ul": "Back hyperextension un 45 degree bench",
+    "group": "Lower back",
+    "main_mm": "Quadratus lumborum",
+    "secondary_mm": ["Erector spinae"],
+    "equipment": ["body", "back extension bench"],
+    "phys_a": "strength", 
+    "p": {
+      "s_st": "",
+      "g_d": "",
+      "n_d": ""
+    }
+  },
+  {
+    "ul": "Barbell bent-over row",
+    "group": "Upper back",
+    "main_mm": "Lattisimus dorsi",
+    "secondary_mm": ["Biceps brachii"],
+    "equipment": ["body", "back extension bench"],
+    "phys_a": "strength", 
+    "p": {
+      "s_st": "",
+      "g_d": "",
+      "n_d": ""
+    }
+  },
+  {
+    "ul": "Barbell incline bench row",
+    "group": "Upper back",
+    "main_mm": "Lattisimus dorsi",
+    "secondary_mm": ["Biceps brachii"],
+    "equipment": ["body", "45 degree bench"],
+    "phys_a": "strength", 
+    "p": {
+      "s_st": "",
+      "g_d": "",
+      "n_d": ""
+    }
+  }
+]

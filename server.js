@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require('cookie-parser')
+const ExerciseModel = require("./Models/Exercise")
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -40,6 +41,42 @@ app.use(function (req, res, next) {
 });
 
 app.use(express.static('client/build'));
+
+app.post("/api/upload-exercise", (req, res) => {
+  mongoose.connect(
+    process.env.ATLAS_URI,
+    {},
+    (err) => {
+      if (err) { 
+        console.log(err)
+        res.json(err) 
+      } else {
+        const { ul, group, main_mm, secondary_mm, equipment, phys_a } = req.body
+        const exercise = { ul, group, main_mm, secondary_mm, equipment, phys_a }
+        const newExercise = new ExerciseModel(exercise);
+        newExercise.save()
+          .then(() => res.json(`Exercise "${newExercise.ul}" saved to db succesfully!`))
+          .catch(err => res.status(400).json(`Error while saving exercise! \n${err}`))
+      };
+    }
+  );
+})
+app.get("/api/get-all-exercises", (req, res) => {
+  mongoose.connect(
+    process.env.ATLAS_URI,
+    {},
+    (err) => {
+      if (err) {
+        console.log(err)
+        res.json(err)
+      } else {
+        ExerciseModel.find()
+          .then(data => res.json(data))
+          .catch(err => res.status(400).json("error while retrieving exercise data"))
+      }
+    }
+  );
+})
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'build', "index.html"))

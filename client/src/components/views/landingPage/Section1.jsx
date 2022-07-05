@@ -1,5 +1,6 @@
+import React from "react";
 import bgImage from "../../../assets/base64/yoga_1.png"
-import { Typewriter, useTypewriter, Cursor } from 'react-simple-typewriter'
+import { useTypewriter } from 'react-simple-typewriter'
 import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBook, faCalculator, faDumbbell, faHandshake } from "@fortawesome/free-solid-svg-icons"

@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import React from "react";
 import IMAGES from "../../../assets/base64/LandingPageImgs.json"
 
 const DATA = [
@@ -74,7 +74,7 @@ export default function Section2() {
           <div className="absolute top-0 right-0 bottom-0 left-0 w-full h-full 
           bg-gradient-to-b from-pink-400 to-indigo-900 rounded-full opacity-90"/>
           <div className="absolute mx-auto my-auto top-0 right-0 bottom-0 left-0 w-[290px] h-[290px] rounded-full">
-            <img className="rounded-full" src={`${img}`} />
+            <img className="rounded-full" alt="" src={`${img}`} />
           </div>
         </div>
       </div>

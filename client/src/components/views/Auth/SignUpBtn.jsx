@@ -1,5 +1,5 @@
-import { faFacebook, faGoogle, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faWindowClose, faX } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { faWindowClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 

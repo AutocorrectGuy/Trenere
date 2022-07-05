@@ -1,0 +1,54 @@
+[
+  {
+    "ul": "Barbell bench press",
+    "group": "chest",
+    "main_mm": "middle chest",
+    "secondary_mm": ["triceps", "shoulders"],
+    "equipment": "barbell",
+    "type": "strength", 
+    "p": {
+      "s_st": "",
+      "g_d": "",
+      "n_d": ""
+    }
+  },
+  {
+    "ul": "Incline dumber flyes",
+    "group": "chest",
+    "main_mm": "upper chest",
+    "secondary_mm": ["biceps", "shoulders"],
+    "equipment": "cabel machine",
+    "type": "strength", 
+    "p": {
+      "s_st": "",
+      "g_d": "",
+      "n_d": ""
+    }
+  },
+  {
+    "ul": "Cable cross-over",
+    "group": "chest",
+    "main_mm": "lower chest",
+    "secondary_mm": ["shoulders"],
+    "equipment": "cabel machine",
+    "type": "strength", 
+    "p": {
+      "s_st": "",
+      "g_d": "",
+      "n_d": ""
+    }
+  },
+  {
+    "ul": "Machine chest press",
+    "group": "chest",
+    "main_mm": "middle chest",
+    "secondary_mm": ["triceps", "shoulders"],
+    "equipment": "chest press machine",
+    "type": "strength", 
+    "p": {
+      "s_st": "",
+      "g_d": "",
+      "n_d": ""
+    }
+  }
+]

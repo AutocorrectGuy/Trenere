@@ -1,3 +1,4 @@
+import React from "react"
 import Footer from "../partials/Footer/Footer"
 import Navigation from "../partials/Navigation/Navigation"
 import Section1 from "./Section1"
@@ -23,8 +24,8 @@ export default function LandingPage() {
         <Section1 />
         <Section2 />
         <Section3 />
-        <Footer />
       </div>
+      <Footer />
     </>
   )
 }
