@@ -1,0 +1,8 @@
+{
+  "exerciseName":     { "dbLabel": "ul",            "label": "Exercise name"      },
+  "muscleGroup":      { "dbLabel": "group",         "label": "Muscle group"       },
+  "mainMuscles":      { "dbLabel": "main_mm",       "label": "Main muscles"       },
+  "secondaryMuscles": { "dbLabel": "secondary_mm",  "label": "Secondary muscles"  },
+  "equipment":        { "dbLabel": "equipment",     "label": "Equipment"          },
+  "physicalAbility":  { "dbLabel": "phys_a",        "label": "Physical ability"   }
+}

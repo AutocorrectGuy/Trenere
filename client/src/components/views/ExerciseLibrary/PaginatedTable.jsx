@@ -1,7 +1,7 @@
 import ReactPaginate from "react-paginate";
 import React, { useEffect, useState } from "react"
 import { useTable } from "react-table"
-import SelectedExerciseModal from "../ExerciseLibrary/SelectedExerciseModal";
+import SelectedExerciseModal from "./SelectedExerciseModal";
 
 
 export default function PaginatedTable({ data, setData, itemsPerPage }) {

@@ -697,6 +697,11 @@ video {
   margin-bottom: 1.25rem;
 }
 
+.my-1{
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
 .mr-1{
   margin-right: 0.25rem;
 }
@@ -767,6 +772,10 @@ video {
 
 .mt-\[100px\]{
   margin-top: 100px;
+}
+
+.mt-\[10px\]{
+  margin-top: 10px;
 }
 
 .block{
@@ -895,6 +904,18 @@ video {
 
 .min-h-\[141\%\]{
   min-height: 141%;
+}
+
+.min-h-\[100px\]{
+  min-height: 100px;
+}
+
+.min-h-\[90px\]{
+  min-height: 90px;
+}
+
+.min-h-\[60px\]{
+  min-height: 60px;
 }
 
 .w-full{
@@ -1133,6 +1154,10 @@ video {
   border-bottom-width: 1px;
 }
 
+.border-b-\[2px\]{
+  border-bottom-width: 2px;
+}
+
 .border-solid{
   border-style: solid;
 }
@@ -1177,6 +1202,11 @@ video {
   border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
 
+.border-slate-900{
+  --tw-border-opacity: 1;
+  border-color: rgb(15 23 42 / var(--tw-border-opacity));
+}
+
 .border-b-\[\#111827\]{
   --tw-border-opacity: 1;
   border-bottom-color: rgb(17 24 39 / var(--tw-border-opacity));
@@ -1184,6 +1214,11 @@ video {
 
 .border-b-transparent{
   border-bottom-color: transparent;
+}
+
+.border-b-slate-900{
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(15 23 42 / var(--tw-border-opacity));
 }
 
 .bg-slate-700{
@@ -1315,6 +1350,11 @@ video {
   background-color: rgb(51 65 85 / var(--tw-bg-opacity));
 }
 
+.bg-slate-300{
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-80{
   --tw-bg-opacity: 0.8;
 }
@@ -1357,6 +1397,10 @@ video {
 
 .bg-opacity-25{
   --tw-bg-opacity: 0.25;
+}
+
+.bg-opacity-40{
+  --tw-bg-opacity: 0.4;
 }
 
 .bg-gradient-to-b{
@@ -1724,6 +1768,10 @@ video {
   padding-right: 1.25rem;
 }
 
+.pl-4{
+  padding-left: 1rem;
+}
+
 .text-left{
   text-align: left;
 }
@@ -1914,6 +1962,10 @@ video {
 
 .opacity-75{
   opacity: 0.75;
+}
+
+.opacity-80{
+  opacity: 0.8;
 }
 
 .shadow{
@@ -2154,6 +2206,26 @@ video {
 .placeholder\:text-slate-500::placeholder{
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+
+.placeholder\:text-slate-600::-webkit-input-placeholder{
+  --tw-text-opacity: 1;
+  color: rgb(71 85 105 / var(--tw-text-opacity));
+}
+
+.placeholder\:text-slate-600::placeholder{
+  --tw-text-opacity: 1;
+  color: rgb(71 85 105 / var(--tw-text-opacity));
+}
+
+.placeholder\:text-slate-400::-webkit-input-placeholder{
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
+}
+
+.placeholder\:text-slate-400::placeholder{
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
 }
 
 .before\:mt-0\.5::before{

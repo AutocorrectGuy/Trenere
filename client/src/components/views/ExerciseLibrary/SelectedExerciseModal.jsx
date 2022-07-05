@@ -1,29 +1,17 @@
 import { faEdit, faTimes, faWindowClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
+import ExercisesKeys from "./ExercisesKeys.json"
 
 export default function SelectedExerciseModal({ data, setData }) {
 
-  // destructuring by hand
-  const {
-    ul,
-    group,
-    main_mm,
-    secondary_mm,
-    equipment,
-    phys_a
-  } = data.data.original
-
   // atšifrējumi:
-  const _ = {
-    exerciseName: { label: "Exercise name", data: ul },
-    muscleGroup: { label: "Muscle group", data: group },
-    mainMuscles: { label: "Main muscles", data: main_mm },
-    secondaryMuscles: { label: "Secondary muscles", data: secondary_mm },
-    equipment: { label: "Equipment", data: equipment },
-    physicalAbility: { label: "Physical ability", data: phys_a },
-  }
-
+  let _ = ExercisesKeys
+  Object.keys(ExercisesKeys).forEach(key => 
+    _[key].data = data.data.original[ExercisesKeys[key].dbLabel]
+    )
+  const h1 = data.data.original.ul
+  
   function DbEntry({ data }) {
     const [mouseEnter, setMouseEnter] = useState(false)
     const [editable, setEditable] = useState(false)
@@ -62,16 +50,16 @@ export default function SelectedExerciseModal({ data, setData }) {
 
     <>
       <div
-        className="bg-black bg-opacity-50 justify-center items-center flex overflow-x-hidden 
+        className="bg-black bg-opacity-80 justify-center items-center flex overflow-x-hidden 
             overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
       >
         <div className="relative flex flex-col my-6 mx-auto max-w-2xl w-full p-5 bg-[#1F2937] rounded-md shadow-sm shadow-slate-900">
           {/*content*/}
           <div className="rounded-lg relative flex flex-col w-full outline-none focus:outline-none">
             {/*header*/}
-            <div className="relative flex bg-slate-700 items-center justify-center w-full min-h-[120px] p-0 border-b border-solid border-b-[#111827] rounded-t">
+            <div className="relative flex bg-slate-700 items-center justify-center w-full min-h-[60px] p-0 border-b border-solid border-b-[#111827] rounded-t">
               <h3 className="text-xl font-bold text-center uppercase">
-                {ul}
+                {h1}
               </h3>
               <button className="absolute right-0 top-0 m-3"
                 onClick={() => setData({ isOpen: false, data: "" })}

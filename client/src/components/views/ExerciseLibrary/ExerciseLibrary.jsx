@@ -1,13 +1,14 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import PaginatedTable from "../Accessories/PaginatedTable";
-import ReactVirtualizedTable from "../Accessories/VirtualizedTable";
+import PaginatedTable from "./PaginatedTable";
+import ReactVirtualizedTable from "./VirtualizedTable";
 import Navigation from "../partials/Navigation/Navigation";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import axios from "../../../axios/axiosConfig"
+import AddExercise from "./AddExercise";
 
 export default function ExerciseLibrary() {
 
@@ -32,25 +33,8 @@ export default function ExerciseLibrary() {
           <input type="text" className="w-full h-full outline-none bg-transparent
           placeholder:text-slate-500 text-white font-semibold placeholder:font-semibold"
             placeholder="Search exercises by name or keywords"
-          ></input>
-
-
+          />
         </form >
-      )
-    }
-
-    function AddExercise() {
-      return (
-        <div className="flex justify-between pb-5">
-          <div className="text-neutral-200 font-bold text-xl">
-            Vingrinājumi
-          </div>
-          <button className="flex items-center bg-blue-600 hover:bg-blue-500 text-white font-semibold 
-              px-4 py-2 rounded-md active:translate-y-[2px] shadow-md shadow-[#1e293ba5] active:shadow-none">
-            <FontAwesomeIcon icon={faPlus} />
-            <div className="pl-2">Pievienot vingrinājumu</div>
-          </button>
-        </div>
       )
     }
 

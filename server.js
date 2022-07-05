@@ -34,7 +34,7 @@ app.use(cors(corsConfig));
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', process.env.NODE_ENV === "development"
     ? "http://localhost:3000"
-    : "https://darrrbs.trenere.com")
+    : "https://trenere.herokuapp.com")
   res.header('Access-Control-Allow-Credentials', true);
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
@@ -72,7 +72,7 @@ app.get("/api/get-all-exercises", (req, res) => {
       } else {
         ExerciseModel.find()
           .then(data => res.json(data))
-          .catch(err => res.status(400).json("error while retrieving exercise data"))
+          .catch(err => res.status(400).json(`error while retrieving exercise data: \n${err}`))
       }
     }
   );
