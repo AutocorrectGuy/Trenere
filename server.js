@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 const whitelist = [
   'http://localhost:3000',
   `http://localhost:${PORT}`,
-  'https://darrrbs.trenere.com'
+  'https://trenere.herokuapp.com'
 ];
 const corsConfig = {
   origin: function (origin, callback) {
