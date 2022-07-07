@@ -47,9 +47,9 @@ app.post("/api/upload-exercise", (req, res) => {
     process.env.ATLAS_URI,
     {},
     (err) => {
-      if (err) { 
+      if (err) {
         console.log(err)
-        res.json(err) 
+        res.json(err)
       } else {
         const { ul, group, main_mm, secondary_mm, equipment, phys_a } = req.body
         const exercise = { ul, group, main_mm, secondary_mm, equipment, phys_a }
@@ -61,7 +61,7 @@ app.post("/api/upload-exercise", (req, res) => {
     }
   );
 })
-app.get("/api/get-all-exercises", (req, res) => {
+app.delete("/api/delete-exercise", (req, res) => {
   mongoose.connect(
     process.env.ATLAS_URI,
     {},
@@ -70,8 +70,32 @@ app.get("/api/get-all-exercises", (req, res) => {
         console.log(err)
         res.json(err)
       } else {
-        ExerciseModel.find()
-          .then(data => res.json(data))
+        ExerciseModel.findByIdAndDelete(req.body._id)
+          .then(data => res.json("Exercise deleted succesfully"))
+          .catch(err => `Error +_+: ${err}`);
+      };
+    }
+  );
+})
+
+app.get("/api/get-all-exercises", (req, res) => {
+  console.log(req.query)
+  const limit = parseInt(req.query.limit);
+  const offset = parseInt(req.query.offset);
+
+  mongoose.connect(
+    process.env.ATLAS_URI,
+    {},
+    async (err) => {
+      if (err) {
+        console.log(err)
+        res.json(err)
+      } else {
+        const documentCount = await ExerciseModel.countDocuments()
+        ExerciseModel.find().limit(limit).skip(offset)
+          .then(data => res.json({
+            data, documentCount
+          }))
           .catch(err => res.status(400).json(`error while retrieving exercise data: \n${err}`))
       }
     }

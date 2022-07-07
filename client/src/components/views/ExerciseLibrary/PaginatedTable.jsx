@@ -1,28 +1,73 @@
 import ReactPaginate from "react-paginate";
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { useTable } from "react-table"
 import SelectedExerciseModal from "./SelectedExerciseModal";
+import axios from "../../../axios/axiosConfig";
+import { useSearchParams } from "react-router-dom";
 
 
 export default function PaginatedTable({ data, setData, itemsPerPage }) {
 
   function PaginateDemoApp({ perPage }) {
-    const [visibleData, setVisibleData] = useState(() => data.slice(0, itemsPerPage))
-    const [pageOffset, setPageOffset] = useState(0);
-    const [pageCount] = useState(Math.ceil(data.length / perPage));
+
+    const firstRender = useRef(true)
+    const [searchParams, setSearchParams] = useSearchParams()
+    const [visibleData, setVisibleData] = useState(undefined)
+    const [pageOffset, setPageOffset] = useState(
+      searchParams.get("offset") === null
+        ? 0
+        : Math.floor(searchParams.get("offset") / itemsPerPage)
+    )
+    const [pageCount, setPageCount] = useState()
+    const requiredSearchParams = ["offset", "limit"]
+    const offset = pageOffset * itemsPerPage
+
+    function loadPageData(offset, itemsPerPage) {
+      axios.get(`/api/get-all-exercises?offset=${offset}&limit=${itemsPerPage}`)
+        .then(res => {
+          setVisibleData(res.data.data)
+          setPageCount(Math.ceil(res.data.documentCount / perPage))
+        })
+    }
 
     useEffect(() => {
-      setVisibleData(() => data.slice(
-        itemsPerPage * (pageOffset),
-        itemsPerPage * (pageOffset) + itemsPerPage))
+      let paramsAreLegit = true
+      requiredSearchParams.forEach(queryParam => {
+        if (searchParams.get(queryParam) === null) {
+          paramsAreLegit = false
+          setSearchParams({ offset, limit: itemsPerPage })
+          loadPageData(offset, itemsPerPage)
+          return
+        }
+      })
+      if (!paramsAreLegit) return
+      loadPageData(searchParams.get("offset"), searchParams.get("limit"))
+    }, [])
+
+    useEffect(() => {
+      if (firstRender.current) {
+        firstRender.current = false
+        return
+      }
+      const newOffset = pageOffset * itemsPerPage
+      loadPageData(newOffset, itemsPerPage)
+      setSearchParams({ offset: newOffset, limit: itemsPerPage })
+
     }, [pageOffset]);
 
     const handlePageChange = (event) => {
       setPageOffset(event.selected)
-
     };
 
     function MyTable() {
+      // test data
+      // const [modalData, setModalData] = useState({
+      //   isOpen: true, data: {
+      //     original: { "_id": "62c441acfb82411520443ead", "ul": "Test item exercise", "group": "chest", 
+      //     "main_mm": "lower chest", "secondary_mm": ["shoulders"], "equipment": ["cabel machine"], 
+      //     "phys_a": "strength", "__v": 0 }
+      //   }
+      // })
       const [modalData, setModalData] = useState({ isOpen: false, data: "" })
 
       const columns = React.useMemo(
@@ -72,11 +117,11 @@ export default function PaginatedTable({ data, setData, itemsPerPage }) {
                   <tr className="h-[50px] bg-[#1F2937] hover:bg-[#4B5563] border-b border-b-[#111827] cursor-pointer"
                     {...row.getRowProps()}
                     onClick={() => {
+                      console.log(JSON.stringify(row.original))
                       setModalData({
                         isOpen: true,
                         data: row
                       })
-                      console.log(row)
                     }}
                   >
                     {row.cells.map(cell => {
@@ -106,27 +151,34 @@ export default function PaginatedTable({ data, setData, itemsPerPage }) {
 
     return (
       <div className="w-full shadow-sm shadow-slate-900 bg-[#334155] bg-opacity-25 rounded-md">
-        <MyTable />
-        <ReactPaginate
-          containerClassName="bg-transparent h-[70px] flex items-center justify-center border-slate-800 px-6"
-          previousLabel="Iepriekšējā"
-          nextLabel="Nākošā"
-          breakLabel="..."
+        {
+          visibleData !== undefined &&
+          <>
+            <MyTable />
+            <ReactPaginate
+              containerClassName="bg-transparent h-[70px] flex items-center justify-center border-slate-800 px-6"
+              previousLabel="Iepriekšējā"
+              nextLabel="Nākošā"
+              breakLabel="..."
 
-          pageClassName="active:translate-y-px select-none mx-1 bg-slate-800 rounded-md hover:bg-slate-700 rounded-md"
-          pageLinkClassName="rounded-md shadow-sm shadow-slate-800 select-none z-1 w-full flex h-full text-sm text-slate-300 font-medium px-4 py-2 hover:text-slate-100"
-          previousLinkClassName="active:translate-y-px shadow-sm shadow-slate-800 select-none mr-1 relative inline-flex items-center px-4 py-2 text-sm font-medium rounded-md text-slate-300 bg-slate-700 hover:bg-slate-600 hover:text-slate-100"
-          nextLinkClassName="active:translate-y-px shadow-sm shadow-slate-800 select-none ml-1 relative inline-flex items-center px-4 py-2 text-sm font-medium rounded-md text-slate-300 bg-slate-700 hover:bg-slate-600 hover:text-slate-100"
-          breakLinkClassName="select-none mx-1 relative inline-flex items-center px-4 py-2 text-sm font-medium rounded-md text-slate-300 bg-slate-700 hover:bg-slate-700 hover:text-slate-700 hover:bg-slate-700 hover:text-slate-100"
-          activeClassName="select-none z-[10] text-neutral-500 text-sm font-medium outline-[2px] bg-slate-600 outline outline-slate-700"
+              pageClassName="active:translate-y-px select-none mx-1 bg-slate-800 rounded-md hover:bg-slate-700 rounded-md"
+              pageLinkClassName="rounded-md shadow-sm shadow-slate-800 select-none z-1 w-full flex h-full text-sm text-slate-300 font-medium px-4 py-2 hover:text-slate-100"
+              previousLinkClassName="active:translate-y-px shadow-sm shadow-slate-800 select-none mr-1 relative inline-flex items-center px-4 py-2 text-sm font-medium rounded-md text-slate-300 bg-slate-700 hover:bg-slate-600 hover:text-slate-100"
+              nextLinkClassName="active:translate-y-px shadow-sm shadow-slate-800 select-none ml-1 relative inline-flex items-center px-4 py-2 text-sm font-medium rounded-md text-slate-300 bg-slate-700 hover:bg-slate-600 hover:text-slate-100"
+              breakLinkClassName="select-none mx-1 relative inline-flex items-center px-4 py-2 text-sm font-medium rounded-md text-slate-300 bg-slate-700 hover:bg-slate-700 hover:text-slate-700 hover:bg-slate-700 hover:text-slate-100"
+              activeClassName="select-none z-[10] text-neutral-500 text-sm font-medium outline-[2px] bg-slate-600 outline outline-slate-700"
 
-          pageCount={pageCount}
-          marginPagesDisplayed={2}
-          pageRangeDisplayed={1}
-          onPageChange={handlePageChange}
-          forcePage={pageOffset}
-        />
+              pageCount={pageCount}
+              marginPagesDisplayed={2}
+              pageRangeDisplayed={1}
+              onPageChange={handlePageChange}
+              forcePage={pageOffset}
+            />
+          </>
+        }
       </div>
+
+
     );
   }
 
