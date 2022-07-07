@@ -29,10 +29,10 @@ export default function DeleteExerciseModal({ _id, name }) {
 
     function handleDeleteSubmit() {
       console.log("delete", _id)
-      axios.delete("/api/delete-exercise", { data: {_id} })
+      axios.delete("/api/delete-exercise", { data: { _id } })
         .then(res => window.location.reload())
         .catch(err => console.log(err))
-      
+
     }
     function handleInput(e) {
       setInputValue(() => {
@@ -73,9 +73,7 @@ export default function DeleteExerciseModal({ _id, name }) {
                     }
                   </div>
                 )
-              }
-
-              )
+              })
             }
             <div className={textClass}>
               tad veiciet apstiprinājumu, ievadot šī vingrinājuma nosaukumu
@@ -100,12 +98,15 @@ export default function DeleteExerciseModal({ _id, name }) {
             </div>
             {
               validInput
-                ? <div className="ml-2 px-4 py-2 rounded-sm select-none cursor-pointer 
+                ? <button className="ml-2 px-4 py-2 rounded-sm select-none cursor-pointer 
                   bg-red-600 hover:bg-red-500 font-semibold"
-                  onClick={() => handleDeleteSubmit()}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleDeleteSubmit()
+                  }}
                 >
                   Dzēst
-                </div>
+                </button>
                 : <div className="ml-2 px-4 py-2 rounded-sm select-none cursor-not-allowed 
                 bg-slate-600  font-semibold">
                   Dzēst

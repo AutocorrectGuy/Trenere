@@ -3,6 +3,7 @@ import { faFeatherAlt, faFileImport, faPlus, faWindowClose } from "@fortawesome/
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ExercisesKeys from "../ExerciseLibrary/db/ExercisesKeys.json"
 import axios from "../../../axios/axiosConfig"
+import AddExerciseInput from "./AddExerciseInput";
 
 export default function AddExercise() {
 
@@ -34,26 +35,6 @@ export default function AddExercise() {
         .catch(err => console.log(err))
     }
 
-    function InputField({ label, dbLabel, ref }) {
-      const [value, setValue] = useState("")
-
-      return (
-        <input
-          autoComplete={"off"}
-          className="h-[40px] px-2 bg-slate-600 bg-opacity-25
-            mt-[10px] border-b-[2px] border-b-slate-900 placeholder:text-slate-400
-            placeholder:font-semibold outline-none"
-          placeholder={`New ${label.toLowerCase()}`}
-          name={dbLabel}
-          value={value}
-          onChange={(e) => {
-            allInputValues.current[dbLabel] = e.target.value
-            setValue(e.target.value)
-          }}
-        />
-      )
-    }
-
     return (
       <form className="flex flex-col bg-[#1F2937] py-10 px-2">
         <div className="flex">
@@ -72,10 +53,11 @@ export default function AddExercise() {
           <div className="flex flex-col w-full">
             {
               templates.map(({ label, dbLabel }, i) =>
-                <InputField
+                <AddExerciseInput
                   key={`exercise-lib-modal-data${i}`}
                   label={label}
                   dbLabel={dbLabel}
+                  allInputValues={allInputValues}
                 />
               )
             }
@@ -104,7 +86,7 @@ export default function AddExercise() {
             overflow-y-auto fixed inset-0 z-[20] outline-none focus:outline-none"
           onClick={() => setOpen(false)}
         />
-        <div className="absolute top-0 right-0 left-0 bottom-0 z-[21] my-auto h-fit  flex flex-col mx-auto max-w-2xl 
+        <div className="absolute top-0 right-0 left-0 bottom-0 z-[21] my-auto h-fit  flex flex-col mx-auto max-w-xl 
             w-full p-5 bg-[#1F2937] rounded-md shadow-sm shadow-slate-900"
         >
           {/*content*/}

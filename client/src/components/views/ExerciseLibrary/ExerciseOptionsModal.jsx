@@ -9,10 +9,6 @@ import DeleteExerciseModal from "./DeleteExerciseModal"
 export default function ExerciseOptionsModal({ data }) {
   const [open, setOpen] = useState(false)
 
-  useEffect(() => { 
-    console.log(data)
-  }, [])
-
   function Dropdown() {
     function EditButton() {
       return (
@@ -56,7 +52,8 @@ export default function ExerciseOptionsModal({ data }) {
     <div className="relative">
       <FontAwesomeIcon
         icon={faCog}
-        className={`w-7 h-7 hover:rotate-180 transition-transform ease-out text-slate-400 duration-500
+        className={`${open ? "rotate-180" : "rotate-0"} 
+        w-7 h-7 transition-transform ease-out text-slate-400 duration-500
         hover:text-slate-500 cursor-pointer`}
         onClick={() => { setOpen(!open) }}
       />

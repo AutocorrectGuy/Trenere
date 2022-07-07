@@ -117,7 +117,6 @@ export default function PaginatedTable({ data, setData, itemsPerPage }) {
                   <tr className="h-[50px] bg-[#1F2937] hover:bg-[#4B5563] border-b border-b-[#111827] cursor-pointer"
                     {...row.getRowProps()}
                     onClick={() => {
-                      console.log(JSON.stringify(row.original))
                       setModalData({
                         isOpen: true,
                         data: row
