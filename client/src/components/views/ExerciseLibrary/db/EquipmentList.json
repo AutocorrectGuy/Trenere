@@ -1,10 +1,122 @@
 [
-  {"lv": "Hantele", "eng": "Dumbell"},
-  {"lv": "Svaru stienis", "eng": "Barbell"},
-  {"lv": "Svaru ripas", "eng": "Weight plates"},
-  {"lv": "Pietupiena statīvs", "eng": "Squat rack"},
-  {"lv": "Svarbumba", "eng": "Kettlebell"},
-  {"lv": "Trenažieris: Smitmašīna", "eng": "Exerise machine: Smithmachine"},
-  {"lv": "Pretestibas gumija", "eng": "Rubber band" },
-  {"lv": "Savs ķermenis", "eng": "Body only"}
+  {
+    "lv": "Savs ķermenis",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Pievilkšanās stienis",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Līdztekas",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Hantele",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Svaru stienis",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Svaru ripas",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Pietupiena statīvs",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Svarbumba",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Sols",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Sols ar regulājamu atzveltnes augstumu",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Mehāniskais skrejceliņš",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Veloergometrs",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Concept II",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Trenažieris: Stair stepper",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Pretestibas gumija",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Līdzsvara platforma BOSU",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Vingrošanas paklājs",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Ritena veltnis",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "TRX piekares sistema",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Slaideri",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Atspiesanās rokturi",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Steps (10cm)",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Trepītes",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Kaste",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Lielā vingrošanas bumba (75cm)",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "Maza vingrošanas bumba (20cm)",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "smitmašīna",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "chest press",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "seated dip machine",
+    "eng": "huiņa"
+  },
+  {
+    "lv": "chest fly machine",
+    "eng": "huiņa"
+  }
 ]
