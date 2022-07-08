@@ -102,8 +102,8 @@ export default function AddExerciseInput({ label, dbLabel, label_ak, allInputVal
         })))
         break;
       case "main_mm":
-        setDropdownItems(MusclesList.map(({ lat }) => ({
-          value: lat, label: lat
+        setDropdownItems(MusclesList.map(({ lat, lv }) => ({
+          value: lv, label: lv
         })))
         break;
       case "secondary_mm":

@@ -8,7 +8,7 @@ import AddExerciseInput from "./AddExerciseInput";
 export default function AddExercise() {
 
   // ul, group, main_mm, secondary_mm, equipment, phys_a
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   const [templates, setTemplates] = useState(() => {
     const list = []
     Object.keys(ExercisesKeys).forEach(key => {
