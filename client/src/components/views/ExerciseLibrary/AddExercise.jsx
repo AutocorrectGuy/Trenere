@@ -8,13 +8,14 @@ import AddExerciseInput from "./AddExerciseInput";
 export default function AddExercise() {
 
   // ul, group, main_mm, secondary_mm, equipment, phys_a
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(true)
   const [templates, setTemplates] = useState(() => {
     const list = []
     Object.keys(ExercisesKeys).forEach(key => {
       list.push({
         dbLabel: ExercisesKeys[key].dbLabel,
-        label: ExercisesKeys[key].label
+        label: ExercisesKeys[key].label,
+        label_ak: ExercisesKeys[key].label_ak,
       })
     })
     return list
@@ -30,6 +31,7 @@ export default function AddExercise() {
     }, [])
 
     function handleSubmit() {
+      console.log(allInputValues.current)
       axios.post("/api/upload-exercise", allInputValues.current)
         .then(res => { window.location.reload() })
         .catch(err => console.log(err))
@@ -37,31 +39,26 @@ export default function AddExercise() {
 
     return (
       <form className="flex flex-col bg-[#1F2937] py-10 px-2">
-        <div className="flex">
-          <div className="flex flex-col">
-            {
-              templates.map(({ label }, i) =>
+        <div className="flex flex-col w-full">
+          {
+            templates.map(({ label, dbLabel, label_ak }, i) =>
+              <div className="flex min-h-[50px] items-center w-full">
                 <div key={`exercise-lib-modal-label-${i}`}
-                  className="flex items-end py-1 pr-10 h-[50px] bg-[#1F2937] border-b 
-                      border-b-transparent text-white font-bold whitespace-nowrap select-none "
+                  className="flex items-end py-1 pr-10 bg-[#1F2937] border-b max-w-[210px] w-full
+                  border-b-transparent text-white font-bold whitespace-nowrap select-none"
                 >
                   {label}
                 </div>
-              )
-            }
-          </div>
-          <div className="flex flex-col w-full">
-            {
-              templates.map(({ label, dbLabel }, i) =>
                 <AddExerciseInput
                   key={`exercise-lib-modal-data${i}`}
                   label={label}
                   dbLabel={dbLabel}
+                  label_ak={label_ak}
                   allInputValues={allInputValues}
                 />
-              )
-            }
-          </div>
+              </div>
+            )
+          }
         </div>
         <button className="flex items-center bg-blue-600 hover:bg-blue-500 
           text-white font-semibold px-4 py-2 rounded-md active:translate-y-[2px] 
@@ -86,7 +83,7 @@ export default function AddExercise() {
             overflow-y-auto fixed inset-0 z-[20] outline-none focus:outline-none"
           onClick={() => setOpen(false)}
         />
-        <div className="absolute top-0 right-0 left-0 bottom-0 z-[21] my-auto h-fit  flex flex-col mx-auto max-w-xl 
+        <div className="absolute top-0 right-0 left-0 bottom-0 z-[21] my-auto h-fit  flex flex-col mx-auto max-w-2xl 
             w-full p-5 bg-[#1F2937] rounded-md shadow-sm shadow-slate-900"
         >
           {/*content*/}

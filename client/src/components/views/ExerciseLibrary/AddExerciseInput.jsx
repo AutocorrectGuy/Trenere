@@ -1,152 +1,230 @@
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import React, { useState } from "react"
-import { useRef } from "react"
+import React, { Component, useState } from "react"
 import { useEffect } from "react"
-import MusclesList from "./db/MusclesList.json"
+import Select  from 'react-select'
 
-export default function AddExerciseInput({ label, dbLabel, allInputValues }) {
-  const [value, setValue] = useState("")
-  const [dropdownOpen, setDropdownOpen] = useState(false)
+// dropdown List sources
+import MuscleGroupsList from "./db/MuscleGroupsList.json"
+import MusclesList from "./db/MusclesList.json"
+import EquipmentList from "./db/EquipmentList.json"
+import PhysicalAbilityList from "./db/PhysicalAbilityList.json"
+
+const customStyles = {
+  option: (provided) => ({
+    ...provided,
+    backgroundColor: "#293443",
+    color: "#94A3B8",
+    border: "none",
+    outline: "none",
+    "&:hover": {
+      backgroundColor: "#334155"
+    }
+  }),
+  container: (provided) => ({
+    ...provided,
+    width: "100%",
+    backgroundColor: "#293443",
+    '&:hover': {
+      boxShadow: "0 0 0 1px #334155"
+    }
+  }),
+  control: (provided, state) => ({
+    ...provided,
+    backgroundColor: "transparent",
+    border: state.isFocused ? 0 : 0,
+    boxShadow: state.isFocused ? 0 : 0,
+    '&:hover': {
+      border: state.isFocused ? 0 : 0
+    }
+  }),
+  input: (provided) => ({
+    ...provided,
+    backgroundColor: "transparent",
+    color: "white"
+  }),
+  singleValue: (provided, state) => {
+    const opacity = state.isDisabled ? 0.5 : 1;
+    const transition = 'opacity 300ms';
+
+    return {
+      ...provided,
+      opacity,
+      transition
+    };
+  },
+  placeholder: (provided) => ({
+    ...provided,
+    color: "#94A3B8",
+    fontWeight: 500
+  }),
+  menu: (provided) => ({
+    ...provided,
+    padding: "0px",
+    margin: "0px"
+  }),
+  menuList: (provided) => ({
+    ...provided,
+    padding: "0px",
+  }),
+  multiValue: (provided) => ({
+    ...provided,
+    backgroundColor: "#455975",
+    borderRadius: "4px",
+    overflow: "hidden"
+  }),
+  multiValueLabel: (provided) => ({
+    ...provided,
+    backgroundColor: "#transparent",
+    color: "#FFFFFF",
+    fontWeight: 500
+  }),
+  multiValueRemove: (provided) => ({
+    ...provided,
+    backgroundColor: "transparent"
+  }),
+  dropdownIndicator: (provided) => ({
+    ...provided,
+    color: "#94A3B8",
+    cursor: "pointer",
+    "&:hover": {
+      color: "white"
+    }
+  }),
+}
+
+export default function AddExerciseInput({ label, dbLabel, label_ak, allInputValues }) {
   const [dropdownItems, setDropdownItems] = useState(undefined)
-  const [suggestionsOpen, setSuggestionsOpen] = useState(false)
-  const max = useRef(10)
 
   useEffect(() => {
     switch (dbLabel) {
+      case "group":
+        setDropdownItems(MuscleGroupsList.map(({ lv }) => ({
+          value: lv, label: lv
+        })))
+        break;
       case "main_mm":
-        setDropdownItems(MusclesList.map(({ lat }) => lat))
+        setDropdownItems(MusclesList.map(({ lat }) => ({
+          value: lat, label: lat
+        })))
         break;
       case "secondary_mm":
-        setDropdownItems(MusclesList.map(({ lat }) => lat))
+        setDropdownItems(MusclesList.map(({ lat }) => ({
+          value: lat, label: lat
+        })))
         break;
-
+      case "equipment":
+        setDropdownItems(EquipmentList.map(({ lv }) => ({
+          value: lv, label: lv
+        })))
+        break;
+      case "phys_a":
+        setDropdownItems(PhysicalAbilityList.map(({ lv }) => ({
+          value: lv, label: lv
+        })))
+        break;
       default:
         break;
     }
   }, [])
 
-  function Dropdown() {
-    return (
-      <>
-        <div className="fixed top-0 right-0 bottom-0 left-0 bg-transparent z-[20]"
-          onClick={() => setDropdownOpen(false)}
-        />
-        <div
-          className={`${dropdownItems.length > max.current && "overflow-y-scroll max-h-[400px]"} 
-          z-[21] absolute top-[40px] right-0 flex flex-col bg-[#293443] 
-        w-full border border-slate-700 rounded-sm shadow-xl shadow-[#171717ce]`}
-        >
-          {
-            dropdownItems.map((item, i) =>
-              <div
-                key={`add-exercise-drop-${dbLabel}-${i}`}
-                className="text-slate-400 px-4 py-2 hover hover:bg-slate-700 
-              cursor-pointer font-semibold"
-                onClick={() => {
-                  setDropdownOpen(false)
-                  setValue(item)
-                }}
-              >
-                {item}
-              </div>
-            )
-          }
-        </div>
-      </>
-    )
-  }
-
-  function SuggestionsList() {
-
-    const [suggestedArray, setSuggestedArray] = useState(
-      dropdownItems.filter(item => item.toUpperCase().includes(value.toUpperCase()))
-    )
-
-    function Item({ p }) {
-      return (
-        <div
-          className={`text-slate-400 px-4 py-2 hover hover:bg-slate-700 cursor-pointer 
-          font-semibold`}
-          onClick={() => {
-            setValue(p)
-            setSuggestionsOpen(false)
-          }}
-        >
-          {p}
-        </div>
-      )
+  function SelectMulti() {
+    function handleChange(newValue) {
+      console.log(newValue)
+      allInputValues.current[dbLabel] = newValue.map(({value}) => value)
     }
-
     return (
-      // need full-screen overlay
-      <>
-        <div className="fixed top-0 right-0 bottom-0 left-0 bg-transparent z-[20]"
-          onClick={() => setSuggestionsOpen(false)}
-        />
-        {
-          suggestedArray.length > 0 &&
-          <div
-            className={`${suggestedArray.length > max.current
-              && "overflow-y-scroll max-h-[400px]"} 
-              z-[20] absolute top-[40px] right-0 flex flex-col bg-[#293443] 
-              w-full border border-slate-700 rounded-sm shadow-xl
-              shadow-[#171717ce]`}
-          >
-            {
-              suggestedArray.map((item, i) =>
-                <Item key={`suggestion-${dbLabel}-${i}`} p={item} />)
-            }
-          </div>
-        }
-      </>
-
-    )
+      <Select
+        isMulti
+        isClearable
+        promptTextCreator={() => false}
+        placeholder={`Izvēlies ${label_ak.toLowerCase()}`}
+        styles={customStyles}
+        onChange={handleChange}
+        options={dropdownItems}
+        isValidNewOption={() => true}
+        noOptionsMessage={() => null}
+      />
+    );
   }
 
-  return (
-    <div
-      className="relative flex h-[40px] mt-[10px] border-b-[2px] border-b-slate-900"
-    >
-      <input
-        autoComplete={"off"}
-        className="flex grow h-full px-2 bg-slate-600 bg-opacity-25
-        placeholder:text-slate-400 placeholder:font-semibold outline-none"
-        placeholder={`New ${label.toLowerCase()}`}
-        name={dbLabel}
-        value={value}
-        onChange={(e) => {
-          allInputValues.current[dbLabel] = e.target.value
-          if (e.target.value.length > 0 && !suggestionsOpen)
-            setSuggestionsOpen(true)
-          else if (e.target.value.length === 0 && suggestionsOpen)
-            setSuggestionsOpen(false)
-          setValue(e.target.value)
-        }}
+  function RegularInput() {
+    return(
+      <input 
+        spellCheck="false"
+        className="placeholder:text-[#94A3B8] w-full h-[36px] px-[10px] font-medium
+        outline-none"
+        style={{ backgroundColor: "#293443" }}
+        placeholder={`Ievadi ${label_ak.toLowerCase()}`}
+        onChange={(e) => {allInputValues.current[dbLabel] = e.target.value}}
       />
+    )
+  }
+  return (
+    <>
       {
-        dropdownItems !== undefined &&
-        <div
-          className="flex h-full items-center cursor-pointer bg-slate-600 bg-opacity-25"
-          onClick={() => {
-            setDropdownOpen(!dropdownOpen)
-            setSuggestionsOpen(false)
-          }}
-        >
-          <FontAwesomeIcon
-            icon={faChevronDown}
-            className={"w-5 h-5 px-2 text-slate-200"}
-          />
-        </div>
+        dbLabel === "ul"
+          ? <RegularInput />
+          : <SelectMulti />
       }
-      {
-        value.length > 0 && suggestionsOpen && dropdownItems &&
-        < SuggestionsList />
-      }
-      {
-        dropdownOpen && dropdownItems !== undefined &&
-        <Dropdown />
-      }
-    </div>
+    </>
   )
 }
+
+
+// export default function AddExerciseInput({ label, dbLabel, allInputValues }) {
+//   const [value, setValue] = useState("")
+//   const [selectedOption, setSelectedOption] = useState(false)
+//   const [dropdownItems, setDropdownItems] = useState(undefined)
+//   const [suggestionsOpen, setSuggestionsOpen] = useState(false)
+//   const max = useRef(10)
+
+//   useEffect(() => {
+//     switch (dbLabel) {
+//       case "main_mm":
+//         setDropdownItems(MusclesList.map(({ lat }) => ({
+//           value: lat, label: lat
+//         })))
+//         break;
+//       case "secondary_mm":
+//         setDropdownItems(MusclesList.map(({ lat }) => ({
+//           value: lat, label: lat
+//         })))
+//         break;
+
+//       default:
+//         break;
+//     }
+//   }, [])
+
+
+//   return (
+//     <div
+//       className="relative flex h-[40px] mt-[10px] border-b-[2px] border-b-slate-900"
+//     >
+//       {
+//         dropdownItems !== undefined
+//           ? <Select
+//             className={`w-full`}
+//             defaultValue={selectedOption}
+//             onChange={setSelectedOption}
+//             options={dropdownItems}
+//           />
+//           : <input
+//             autoComplete={"off"}
+//             className="flex grow h-full px-2 bg-slate-600 bg-opacity-25
+//             placeholder:text-slate-400 placeholder:font-semibold outline-none"
+//             placeholder={`New ${label.toLowerCase()}`}
+//             name={dbLabel}
+//             value={value}
+//             onChange={(e) => {
+//               allInputValues.current[dbLabel] = e.target.value
+//               if (e.target.value.length > 0 && !suggestionsOpen)
+//                 setSuggestionsOpen(true)
+//               else if (e.target.value.length === 0 && suggestionsOpen)
+//                 setSuggestionsOpen(false)
+//               setValue(e.target.value)
+//             }}
+//           />
+//       }
+//     </div>
+//   )
+// }

@@ -1,8 +1,8 @@
 {
-  "exerciseName":     { "dbLabel": "ul",            "label": "Exercise name"      },
-  "muscleGroup":      { "dbLabel": "group",         "label": "Muscle group"       },
-  "mainMuscles":      { "dbLabel": "main_mm",       "label": "Main muscles"       },
-  "secondaryMuscles": { "dbLabel": "secondary_mm",  "label": "Secondary muscles"  },
-  "equipment":        { "dbLabel": "equipment",     "label": "Equipment"          },
-  "physicalAbility":  { "dbLabel": "phys_a",        "label": "Physical ability"   }
+  "exerciseName":     { "dbLabel": "ul",            "label": "Vingrinājuma nosaukums", "label_ak": "Vingrinājuma nosaukumu"  },
+  "muscleGroup":      { "dbLabel": "group",         "label": "Muskuļu grupa"         , "label_ak": "Muskuļu grupas"          },
+  "mainMuscles":      { "dbLabel": "main_mm",       "label": "Galvenie muskuļi"      , "label_ak": "Galvenos muskuļus"       },
+  "secondaryMuscles": { "dbLabel": "secondary_mm",  "label": "Pakārtotie muskuļi"    , "label_ak": "Pakārtotos muskuļus"     },
+  "equipment":        { "dbLabel": "equipment",     "label": "Ekipējums"             , "label_ak": "Ekipējumu"               },
+  "physicalAbility":  { "dbLabel": "phys_a",        "label": "Fiziskā īpašība"       , "label_ak": "Fiziskās īpašības"       }
 }
