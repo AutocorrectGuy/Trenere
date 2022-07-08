@@ -6,8 +6,7 @@ const exercisSchema = new Schema({
   group:        [{ type: String }],
   main_mm:      [{ type: String }],
   secondary_mm: [{ type: String }],
-  equipment:    [{ type: String }],
-  phys_a:       [{ type: String }]
+  equipment:    [{ type: String }]
 })
 
 const Exercise = mongoose.model("Exercise", exercisSchema);

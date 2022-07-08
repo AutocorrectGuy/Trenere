@@ -76,8 +76,7 @@ export default function PaginatedTable({ data, setData, itemsPerPage }) {
           { Header: 'MM grupa', accessor: 'group' },
           { Header: 'Galvenais mm', accessor: 'main_mm' },
           { Header: 'Pakārtotie mm', accessor: 'secondary_mm' },
-          { Header: 'Ekipējums', accessor: 'equipment' },
-          { Header: 'Fiziskā īp', accessor: 'phys_a' },
+          { Header: 'Ekipējums', accessor: 'equipment' }
         ],
         []
       )
@@ -125,13 +124,34 @@ export default function PaginatedTable({ data, setData, itemsPerPage }) {
                   >
                     {row.cells.map(cell => {
                       return (
-                        <td className={`px-4 
-                        ${cell.getCellProps().key.includes("_ul")
-                            ? "text-white font-bold"
-                            : "text-slate-400 font-normal opacity-75"}`}
+                        <td className={`px-4`}
                           {...cell.getCellProps()}
                         >
-                          {cell.render('Cell')}
+                          {
+                            cell.getCellProps().key.includes("_ul")
+                              ? <div className="whitespace-nowrap text-white font-bold">
+                                  {cell.value}
+                                  </div>
+                              : cell.value.length > 1 && typeof (cell.value) !== "string"
+                                ? <div className={"flex flex-wrap"}>
+                                  {
+                                    [...cell.value].map(item =>
+                                      <div 
+                                        key={`${cell.row.id}-${cell.column.id}-${item}`}
+                                        className="bg-[#283140] bg-opacity-75 px-2 py-1 w-fit 
+                                            rounded-md m-[2px] whitespace-nowrap text-slate-400 font-normal opacity-75"
+                                      >
+                                        {item}
+                                      </div>
+                                    )
+                                  }
+                                </div>
+                                : <div className="bg-[#283140] bg-opacity-75 px-2 py-1 w-fit
+                                          rounded-md whitespace-nowrap text-slate-400 font-normal opacity-75"
+                                >
+                                  {cell.value}
+                                </div>
+                          }
                         </td>
                       )
                     })}
