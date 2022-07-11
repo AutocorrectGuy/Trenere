@@ -1,4 +1,4 @@
-import { faEdit, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import ExercisesKeys from "./db/ExercisesKeys.json"
@@ -6,7 +6,7 @@ import ExerciseOptionsModal from "./ExerciseOptionsModal";
 
 export default function SelectedExerciseModal({ data, setData }) {
 
-  const [editvalues, setEditValues] = useState(false)
+  const [editvalues] = useState(false)
   // atšifrējumi:
   let _ = ExercisesKeys
   Object.keys(ExercisesKeys).forEach(key =>
@@ -15,7 +15,7 @@ export default function SelectedExerciseModal({ data, setData }) {
   const h1 = data.data.original.ul
 
   function DbEntry({ data }) {
-    const [mouseEnter, setMouseEnter] = useState(false)
+    const [mouseEnter] = useState(false)
 
     function RegularEntry() {
       return (
@@ -27,32 +27,6 @@ export default function SelectedExerciseModal({ data, setData }) {
         </div>
       )
     }
-
-    /**
-     * TODO: created editable entry. But first, need db of dropdown item data
-     * + there will be checkboxes (to select an array of items)
-     */
-    // function EditableEntry() {
-    //   return (
-    //     <div className="flex items-end w-full h-[50px] bg-[#1F2937] border-b 
-    //   border-b-[#111827] text-slate-400 opacity-75 font-bold"
-    //       onMouseEnter={() => setMouseEnter(true)}
-    //       onMouseLeave={() => setMouseEnter(false)}
-    //     >
-    //       <div
-    //         className={`${mouseEnter && "bg-slate-700"} py-1 px-2 rounded-md`}
-    //       >
-    //         {Array.isArray(data) ? data.map((item, i) => !i ? item : `, ${item}`) : data
-    //         }
-    //       </div>
-    //       <FontAwesomeIcon
-    //         icon={faEdit}
-    //         className={`${mouseEnter ? "visible" : "hidden"} pb-2 pl-2 w-4 h-4`}
-    //       />
-    //     </div>
-    //   )
-    // }
-
     return (
       <>
         {

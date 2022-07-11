@@ -1,7 +1,6 @@
-import { faCog, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons"
+import { faCog, faEdit } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
-import { useEffect } from "react"
 import { useState } from "react"
 import DeleteExerciseModal from "./DeleteExerciseModal"
 

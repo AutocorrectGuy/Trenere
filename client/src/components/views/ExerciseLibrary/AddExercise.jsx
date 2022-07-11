@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { faFeatherAlt, faFileImport, faPlus, faWindowClose } from "@fortawesome/free-solid-svg-icons";
+import { faFeatherAlt, faPlus, faWindowClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ExercisesKeys from "../ExerciseLibrary/db/ExercisesKeys.json"
 import axios from "../../../axios/axiosConfig"
@@ -9,7 +9,7 @@ export default function AddExercise() {
 
   // ul, group, main_mm, secondary_mm, equipment, phys_a
   const [open, setOpen] = useState(false)
-  const [templates, setTemplates] = useState(() => {
+  const [templates] = useState(() => {
     const list = []
     Object.keys(ExercisesKeys).forEach(key => {
       list.push({

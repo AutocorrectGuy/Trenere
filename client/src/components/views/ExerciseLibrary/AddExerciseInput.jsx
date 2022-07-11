@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react"
+import React, { useState } from "react"
 import { useEffect } from "react"
 import Select  from 'react-select'
 
@@ -91,7 +91,7 @@ const customStyles = {
   }),
 }
 
-export default function AddExerciseInput({ label, dbLabel, label_ak, allInputValues }) {
+export default function AddExerciseInput({ dbLabel, label_ak, allInputValues }) {
   const [dropdownItems, setDropdownItems] = useState(undefined)
 
   useEffect(() => {

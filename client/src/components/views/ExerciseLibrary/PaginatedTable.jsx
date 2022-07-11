@@ -135,6 +135,7 @@ export default function PaginatedTable({ data, setData, itemsPerPage }) {
                               : cell.value.length > 1 && typeof (cell.value) !== "string"
                                 ? <div className={"flex flex-wrap"}>
                                   {
+                                    
                                     [...cell.value].map(item =>
                                       <div 
                                         key={`${cell.row.id}-${cell.column.id}-${item}`}

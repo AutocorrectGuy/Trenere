@@ -1,7 +1,7 @@
 {
-  "exerciseName":     { "dbLabel": "ul",            "label": "Vingrinājuma nosaukums", "label_ak": "Vingrinājuma nosaukumu"  },
-  "muscleGroup":      { "dbLabel": "group",         "label": "Muskuļu grupa"         , "label_ak": "Muskuļu grupas"          },
-  "mainMuscles":      { "dbLabel": "main_mm",       "label": "Galvenie muskuļi"      , "label_ak": "Galvenos muskuļus"       },
-  "secondaryMuscles": { "dbLabel": "secondary_mm",  "label": "Pakārtotie muskuļi"    , "label_ak": "Pakārtotos muskuļus"     },
-  "equipment":        { "dbLabel": "equipment",     "label": "Ekipējums"             , "label_ak": "Ekipējumu"               }
+  "exerciseName":     { "dbLabel": "ul",            "label": "Vingrinājuma nosaukums", "label_ak": "Vingrinājuma nosaukumu", "label_ge": "Vingrinājuma nosaukuma"  },
+  "muscleGroup":      { "dbLabel": "group",         "label": "Muskuļu grupa"         , "label_ak": "Muskuļu grupas"        , "label_ge": "Muskuļu grupas"          },
+  "mainMuscles":      { "dbLabel": "main_mm",       "label": "Galvenie muskuļi"      , "label_ak": "Galvenos muskuļus"     , "label_ge": "Galvenajiem muskuļiem"   },
+  "secondaryMuscles": { "dbLabel": "secondary_mm",  "label": "Pakārtotie muskuļi"    , "label_ak": "Pakārtotos muskuļus"   , "label_ge": "Pakārtotajiem muskuļiem" },
+  "equipment":        { "dbLabel": "equipment",     "label": "Ekipējums"             , "label_ak": "Ekipējumu"             , "label_ge": "Ekipējuma"               }
 }

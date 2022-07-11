@@ -1,29 +1,15 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PaginatedTable from "./PaginatedTable";
 import ReactVirtualizedTable from "./VirtualizedTable";
 import Navigation from "../partials/Navigation/Navigation";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { useSearchParams } from 'react-router-dom';
-
-import axios from "../../../axios/axiosConfig"
 import AddExercise from "./AddExercise";
 
 export default function ExerciseLibrary() {
 
   const [tableStyle] = useState("paginated-list")
   const [data, setData] = useState(undefined)
-
-
-  useEffect(() => {
-    // async function fetchData() {
-    //   const res = await axios.get("api/get-all-exercises")
-    //   setData(res.data)
-    // }
-    // fetchData()
-  }, [])
 
   function TableWithTools() {
     function SearchBar() {
@@ -46,12 +32,10 @@ export default function ExerciseLibrary() {
           <AddExercise />
           <SearchBar />
         </div>
-
         {
-            tableStyle === "virtualized-list"
-              ? <ReactVirtualizedTable data={data} setData={setData} />
-              : <PaginatedTable data={data} setData={setData} itemsPerPage={10} />
-
+          tableStyle === "virtualized-list"
+            ? <ReactVirtualizedTable data={data} setData={setData} />
+            : <PaginatedTable data={data} setData={setData} itemsPerPage={10} />
         }
       </div>
     )

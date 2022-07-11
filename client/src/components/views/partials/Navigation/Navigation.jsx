@@ -11,11 +11,15 @@ const NAVIGATIONS = [
     "href": "/"
   },   
   {
-    "ul" : "Vingrinājumu bibliotēka",
+    "ul" : "Izveido treniņu",
+    "href": "/create-workout"
+  },
+  {
+    "ul" : "Vingrinājumi",
     "href": "/exercise-library"
   },
   {
-    "ul" : "Idejas autore",
+    "ul" : "Autore",
     "href": "/"
   }]
 

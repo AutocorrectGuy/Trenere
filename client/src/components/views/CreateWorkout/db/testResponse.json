@@ -1,0 +1,339 @@
+{
+  "data": [
+    {
+      "_id": "62c85cab6cd679eb52c19b54",
+      "ul": "Ab Draw Leg Slide",
+      "group": [
+        "Vēders"
+      ],
+      "main_mm": [
+        "Vēdera taisnais muskulis"
+      ],
+      "secondary_mm": [
+        "Ārējie slīpie vēdera muskuļi"
+      ],
+      "equipment": [
+        "Vingrošanas paklājs"
+      ],
+      "phys_a": [
+        ""
+      ],
+      "__v": 0
+    },
+    {
+      "_id": "62c85cdd6cd679eb52c19b58",
+      "ul": "Air Bike",
+      "group": [
+        "Vēders"
+      ],
+      "main_mm": [
+        "Ārējie slīpie vēdera muskuļi"
+      ],
+      "secondary_mm": [
+        "Vēdera taisnais muskulis"
+      ],
+      "equipment": [
+        "Vingrošanas paklājs"
+      ],
+      "phys_a": [
+        ""
+      ],
+      "__v": 0
+    },
+    {
+      "_id": "62c85d266cd679eb52c19b5c",
+      "ul": "Bent Knee Hip Raise",
+      "group": [
+        "Vēders"
+      ],
+      "main_mm": [
+        "Vēdera taisnais muskulis"
+      ],
+      "secondary_mm": [
+        "Ārējie slīpie vēdera muskuļi"
+      ],
+      "equipment": [
+        "Vingrošanas paklājs"
+      ],
+      "phys_a": [
+        ""
+      ],
+      "__v": 0
+    },
+    {
+      "_id": "62c85d2d6cd679eb52c19b60",
+      "ul": "Barbell bech press",
+      "group": [
+        "Krūšu muskuļi"
+      ],
+      "main_mm": [
+        "Lielais krūšu muskulis"
+      ],
+      "secondary_mm": [
+        "Augšdelma trīsgalvanais muskulis",
+        "Deltveida muskuļa priekšēja daļa"
+      ],
+      "equipment": [
+        "Svaru stienis",
+        "Svaru ripas",
+        "Sols"
+      ],
+      "phys_a": [
+        ""
+      ],
+      "__v": 0
+    },
+    {
+      "_id": "62c85d7f6cd679eb52c19b64",
+      "ul": "Boat Pose",
+      "group": [
+        "Vēders"
+      ],
+      "main_mm": [
+        "Vēdera taisnais muskulis"
+      ],
+      "secondary_mm": [
+        "Ārējie slīpie vēdera muskuļi"
+      ],
+      "equipment": [
+        "Vingrošanas paklājs"
+      ],
+      "phys_a": [
+        ""
+      ],
+      "__v": 0
+    },
+    {
+      "_id": "62c85d956cd679eb52c19b68",
+      "ul": "Incline bench press",
+      "group": [
+        "Krūšu muskuļi"
+      ],
+      "main_mm": [
+        "Lielais krūšu muskulis"
+      ],
+      "secondary_mm": [
+        "Deltveida muskuļa priekšēja daļa",
+        "Augšdelma trīsgalvanais muskulis"
+      ],
+      "equipment": [
+        "Svaru stienis",
+        "Svaru ripas",
+        "Sols ar regulājamu atzveltnes augstumu"
+      ],
+      "phys_a": [
+        ""
+      ],
+      "__v": 0
+    },
+    {
+      "_id": "62c85dd06cd679eb52c19b6c",
+      "ul": "Alternate Heel Touches",
+      "group": [
+        "Vēders"
+      ],
+      "main_mm": [
+        "Ārējie slīpie vēdera muskuļi"
+      ],
+      "secondary_mm": [
+        "Vēdera taisnais muskulis"
+      ],
+      "equipment": [
+        "Vingrošanas paklājs"
+      ],
+      "phys_a": [
+        ""
+      ],
+      "__v": 0
+    },
+    {
+      "_id": "62c85ddc6cd679eb52c19b70",
+      "ul": "Chest fly machine",
+      "group": [
+        "Krūšu muskuļi"
+      ],
+      "main_mm": [
+        "Lielais krūšu muskulis"
+      ],
+      "secondary_mm": [
+        "Augšdelma trīsgalvanais muskulis",
+        "Deltveida muskuļa priekšēja daļa"
+      ],
+      "equipment": [
+        "chest fly machine"
+      ],
+      "phys_a": [
+        ""
+      ],
+      "__v": 0
+    },
+    {
+      "_id": "62c85df86cd679eb52c19b74",
+      "ul": "Deep push up",
+      "group": [
+        "Krūšu muskuļi"
+      ],
+      "main_mm": [
+        "Lielais krūšu muskulis"
+      ],
+      "secondary_mm": [
+        "Deltveida muskuļa priekšēja daļa",
+        "Augšdelma trīsgalvanais muskulis"
+      ],
+      "equipment": [
+        "Atspiesanās rokturi"
+      ],
+      "phys_a": [
+        ""
+      ],
+      "__v": 0
+    },
+    {
+      "_id": "62c85e2b6cd679eb52c19b78",
+      "ul": "Dumbell bench press",
+      "group": [
+        "Krūšu muskuļi"
+      ],
+      "main_mm": [
+        "Lielais krūšu muskulis"
+      ],
+      "secondary_mm": [
+        "Augšdelma trīsgalvanais muskulis",
+        "Deltveida muskuļa priekšēja daļa"
+      ],
+      "equipment": [
+        "Hantele",
+        "Sols"
+      ],
+      "phys_a": [
+        ""
+      ],
+      "__v": 0
+    },
+    {
+      "_id": "62c85e336cd679eb52c19b7c",
+      "ul": "Toe Touchers",
+      "group": [
+        "Vēders"
+      ],
+      "main_mm": [
+        "Vēdera taisnais muskulis"
+      ],
+      "secondary_mm": [
+        "Ārējie slīpie vēdera muskuļi"
+      ],
+      "equipment": [
+        "Vingrošanas paklājs"
+      ],
+      "phys_a": [
+        ""
+      ],
+      "__v": 0
+    },
+    {
+      "_id": "62c85e4d6cd679eb52c19b80",
+      "ul": "Dumbell pullover",
+      "group": [
+        "Krūšu muskuļi"
+      ],
+      "main_mm": [
+        "Lielais krūšu muskulis"
+      ],
+      "secondary_mm": [
+        "Priekšējais zobainais muskulis"
+      ],
+      "equipment": [
+        "Hantele"
+      ],
+      "phys_a": [
+        ""
+      ],
+      "__v": 0
+    },
+    {
+      "_id": "62c85e7b6cd679eb52c19b84",
+      "ul": "Dumbell flyes",
+      "group": [
+        "Krūšu muskuļi"
+      ],
+      "main_mm": [
+        "Lielais krūšu muskulis"
+      ],
+      "secondary_mm": [
+        "Deltveida muskuļa priekšēja daļa"
+      ],
+      "equipment": [
+        "Hantele",
+        "Sols"
+      ],
+      "phys_a": [
+        ""
+      ],
+      "__v": 0
+    },
+    {
+      "_id": "62c85e956cd679eb52c19b88",
+      "ul": "Incline dumbell flyes",
+      "group": [
+        "Krūšu muskuļi"
+      ],
+      "main_mm": [
+        "Lielais krūšu muskulis"
+      ],
+      "secondary_mm": [
+        "Deltveida muskuļa priekšēja daļa"
+      ],
+      "equipment": [
+        "Hantele",
+        "Sols ar regulājamu atzveltnes augstumu"
+      ],
+      "phys_a": [
+        ""
+      ],
+      "__v": 0
+    },
+    {
+      "_id": "62c85ebf6cd679eb52c19b8c",
+      "ul": "Dumbell decline press",
+      "group": [
+        "Krūšu muskuļi"
+      ],
+      "main_mm": [
+        "Lielais krūšu muskulis"
+      ],
+      "secondary_mm": [
+        "Deltveida muskuļa priekšēja daļa",
+        "Augšdelma trīsgalvanais muskulis"
+      ],
+      "equipment": [
+        "Sols ar regulājamu atzveltnes augstumu",
+        "Hantele"
+      ],
+      "phys_a": [
+        ""
+      ],
+      "__v": 0
+    },
+    {
+      "_id": "62c85ec86cd679eb52c19b92",
+      "ul": "Side Bridge",
+      "group": [
+        "Vēders"
+      ],
+      "main_mm": [
+        "Ārējie slīpie vēdera muskuļi"
+      ],
+      "secondary_mm": [
+        "Vēdera taisnais muskulis"
+      ],
+      "equipment": [
+        "Vingrošanas paklājs"
+      ],
+      "phys_a": [
+        ""
+      ],
+      "__v": 0
+    }
+  ],
+  "documentCount": 16
+}
