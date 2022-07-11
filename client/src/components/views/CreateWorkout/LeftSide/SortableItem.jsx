@@ -30,11 +30,12 @@ const SortableItem = sortableElement(({
     </div>
   )
   const IntensityVolumeField = () => {
+    const DEFAULT_LOAD = { setsCount: 3, repsCount: 12 }
     const [state, setState] = useState(() => {
 
       let target = inputFieldRefs.current[itemData._id]
       if( target === undefined) 
-        return { setsCount: 3, repsCount: 12 }
+        return DEFAULT_LOAD
       else if (target.load !== undefined)
         return inputFieldRefs.current[itemData._id].load
     })
@@ -51,7 +52,7 @@ const SortableItem = sortableElement(({
       
       if(inputFieldRefs.current[_id] === undefined) {
         inputFieldRefs.current[_id] = {}
-        inputFieldRefs.current[_id].load = {}
+        inputFieldRefs.current[_id].load = DEFAULT_LOAD
         
       }
       inputFieldRefs.current[_id].load[e.target.name] = e.target.value
