@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
+import React from "react";
 import SortableExercises from "./SortableExercises";
 
-export default function LeftSide({ selectedState, allExercises }) {
-  const inputFieldRefs = useRef([])
+export default function LeftSide({ selectedState, allExercises, inputFieldRefs }) {
+  
 
   return (
     <div className="w-full h-full border-2 border-dashed border-neutral-700 rounded-lg mr-2 p-5">

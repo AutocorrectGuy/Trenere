@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import ExerciseKeys from "../../../ExerciseLibrary/db/ExercisesKeys.json"
+import ExerciseKeys from "../../../../ExerciseLibrary/db/ExercisesKeys.json"
 import SearchBarDropdown from "./SearchBarDropdown";
 
 
@@ -14,20 +14,17 @@ export default function SearchBar({ filteredExercisesState, allExercises }) {
   const [currentDropdownItem, setCurrentDropdownItem] = useState(dropdownOptions[0])
   const [filteredExercises, setFilteredExercises] = filteredExercisesState
 
-  function filterExercises() {
+  useEffect(() => {
     setFilteredExercises(
       (currentDropdownItem.dbLabel === "ul")
         ? allExercises.filter(exercise =>
           exercise[currentDropdownItem.dbLabel].toUpperCase()
             .includes(inputValue.toUpperCase()))
-        : allExercises.filter(exercise => 
-            exercise[currentDropdownItem.dbLabel]
+        : allExercises.filter(exercise =>
+          exercise[currentDropdownItem.dbLabel]
             .filter(item => item.toUpperCase()
-            .includes(inputValue.toUpperCase())).length > 0)
+              .includes(inputValue.toUpperCase())).length > 0)
     )
-  }
-  useEffect(() => {
-    filterExercises()
   }, [inputValue])
 
   return (

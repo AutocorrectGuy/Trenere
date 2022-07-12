@@ -1,19 +1,14 @@
-import React from "react"
-import { useState } from "react"
-import { useEffect } from "react"
+import React, { useState, memo, useRef } from "react"
 import Navigation from "../partials/Navigation/Navigation"
 import testResponse from "./db/testResponse.json"
 import LeftSide from "./LeftSide/LeftSide"
-import RightSide from "./RightSide/RightSide"
+import RightSide from "./RightSide/Search/Layout"
 
-export default function CreateWorkout() {
-
+const CreateWorkout = () => {
   const [allExercises] = useState(testResponse.data)
   // save only selected exercise ID
   const [selectedExercises, setSelectedExercises] = useState([])
-
-  useEffect(() => {
-  }, [])
+  const inputFieldRefs = useRef([])
 
   return (
     <>
@@ -24,12 +19,14 @@ export default function CreateWorkout() {
             <LeftSide
               allExercises={allExercises}
               selectedState={[selectedExercises, setSelectedExercises]}
+              inputFieldRefs={inputFieldRefs}
             />
           </div>
           <div className="w-5/12">
             <RightSide
               allExercises={allExercises}
               selectedState={[selectedExercises, setSelectedExercises]}
+              inputFieldRefs={inputFieldRefs}
             />
           </div>
         </div>
@@ -37,3 +34,5 @@ export default function CreateWorkout() {
     </>
   )
 }
+
+export default memo(CreateWorkout)
