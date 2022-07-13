@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCog } from "@fortawesome/free-solid-svg-icons";
+import { faBurger, faCog, faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 import OPTIONS from "../Options/DefaultOptions";
 
 
@@ -31,8 +31,8 @@ export const OptionsCell = ({ exerciseData }) => {
     <div className="relative">
       <div className="flex h-[30px] items-center justify-center pl-1 pt-[2px] cursor-pointer">
         <FontAwesomeIcon
-          icon={faCog}
-          className={"text-neutral-600 w-7 h-7"}
+          icon={faEllipsisV}
+          className={"text-neutral-600 w-6 h-6"}
           onClick={() => setOpen(true)}
         />
       </div>

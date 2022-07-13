@@ -13,7 +13,7 @@ const tableWidths = [
   { cellName: "options", width: "40px" },
 ]
 
-const headers = ["Vingrinājuma nosaukums", "Slodzes dozējums", "Metodiskie norādījumi"]
+const headers = ["Exercise", "Sets/reps", "Description"]
 
 const SortableExercises = ({ selectedState, allExercises, inputFieldRefs }) => {
   const [selectedExercises, setSelectedExercises] = selectedState
