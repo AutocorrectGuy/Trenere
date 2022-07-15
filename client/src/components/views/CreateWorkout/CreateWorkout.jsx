@@ -1,39 +1,69 @@
-import { faSearch } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { useState, memo, useRef } from "react"
 import Navigation from "../partials/Navigation/Navigation"
 import testResponse from "./db/testResponse.json"
-import LeftSide from "./LeftSide/LeftSide"
-import NavBarVertical from "./NavVertical/NavVertical"
-import RightSide from "./RightSide/Search/Layout"
+import NavBarVertical from "./NavVertical/NavBar/NavVertical"
+import SaveExerciseLayout from "./NavVertical/Features/SaveWorkout/SaveExerciseLayout"
+import SearchExerciseLayout from "./NavVertical/Features/SearchExercises/SearchExerciseLayout"
+import WorkSpace from "./Workspace/WorkSpace"
+
+const widths = { workSpace: "65%", feature: "35%" }
+const defaultStyles = {
+  boxShadow: "10px 0 5px -2px #f6f2fc",
+  zIndex: "0"
+}
 
 const CreateWorkout = () => {
   const [allExercises] = useState(testResponse.data)
   // save only selected exercise ID
   const [selectedExercises, setSelectedExercises] = useState([])
   const inputFieldRefs = useRef([])
-  const [rightOpen, setRightOpen] = useState(true)
 
-
+  // feature states. Are switched in vertical navbr
+  const [searchOpen, setSarchOpen] = useState(true)
+  const [continueOpen, setContinueOpen] = useState(false)
 
   return (
     <>
       <Navigation />
-      <div className="flex w-full h-screen bg-neutral-900">
-        <div className="flex w-full h-full pt-[60px] p-2">
-          <NavBarVertical rightOpenState={[rightOpen, setRightOpen]} />
-          {
-            rightOpen &&
-            <div className="w-5/12">
-              <RightSide
+      <div className="flex w-full h-screen">
+        <div className="flex w-full h-full pt-[70px]">
+          {/* Navbar */}
+          <NavBarVertical
+            searchOpenState={[searchOpen, setSarchOpen]}
+            continueOpenState={[continueOpen, setContinueOpen]}
+          />
+
+          {/* Features */}
+          { /** Search exercise container*/
+            searchOpen &&
+            <div
+              style={{ ...defaultStyles, width: widths.feature }}
+            >
+              <SearchExerciseLayout
                 allExercises={allExercises}
                 selectedState={[selectedExercises, setSelectedExercises]}
                 inputFieldRefs={inputFieldRefs}
               />
             </div>
           }
-          <div className={`${rightOpen ? "w-7/12" : "w-full"}`}>
-            <LeftSide
+          { /** `Continue >>` container*/
+            continueOpen &&
+            <div style={{ ...defaultStyles, width: widths.feature }}>
+              <SaveExerciseLayout
+                selectedState={[selectedExercises, setSelectedExercises]}
+                inputFieldRefs={inputFieldRefs}
+              />
+            </div>
+          }
+
+          {/* Main workspace*/}
+          <div style={{
+            width: `${(searchOpen || continueOpen) ? widths.workSpace : "100%"}`,
+            overflowY: "scroll",
+            overflowX: "hidden"
+          }}
+          >
+            <WorkSpace
               allExercises={allExercises}
               selectedState={[selectedExercises, setSelectedExercises]}
               inputFieldRefs={inputFieldRefs}

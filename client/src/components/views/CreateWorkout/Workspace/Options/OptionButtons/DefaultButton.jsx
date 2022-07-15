@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const DefaultButton = ({ ul, icon, setOpenOptions }) => {
   return (
     <div
-      className="flex items-center pl-4 pr-6 py-2 hover:bg-neutral-700 select-none cursor-pointer"
+      className="flex items-center pl-4 pr-6 py-2 hover:bg-neutral-100 select-none cursor-pointer"
       onClick={() => {
         setOpenOptions(false)
       }}

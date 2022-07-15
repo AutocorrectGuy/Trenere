@@ -2,7 +2,6 @@ import { faEdit, faTrash, faEye, faAngleDoubleUp, faAngleDoubleDown } from "@for
 import CopyAbove from "./OptionButtons/CopyAbove";
 import CopyBelow from "./OptionButtons/CopyBelow";
 import Edit from "./OptionButtons/Edit";
-import TestOption from "./OptionButtons/TestOption";
 import Trash from "./OptionButtons/Trash";
 import View from "./OptionButtons/View";
 

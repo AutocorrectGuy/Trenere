@@ -1,0 +1,8 @@
+[
+  { "cellName": "grabHandle",   "styles": { "width": "50px" } },
+  { "cellName": "exerciseName", "styles": { "width": "30%", "textOverflow": "ellipsis" } }, 
+  { "cellName": "load",         "styles": { "width": "135px" } },
+  { "cellName": "rest",         "styles": { "width": "135px" } },
+  { "cellName": "notes",        "styles": { "display": "flex", "flexGrow": "1"  } },
+  { "cellName": "options",      "styles": { "width": "40px"  } }
+]

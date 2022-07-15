@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-const inputStyle = `bg-neutral-700 h-full text-right text-white px-1
-rounded-md outline-none text-base caret-neutral-200 font-bold`
+const inputStyle = `bg-transparent h-full text-right text-neutral-700 px-1
+outline-none text-base caret-neutral-700 font-bold`
 
 export const LoadCell = ({ inputFieldRefs, selectedExercise, index }) => {
   const ref = inputFieldRefs.current.filter(
@@ -17,7 +17,7 @@ export const LoadCell = ({ inputFieldRefs, selectedExercise, index }) => {
   }
 
   return (
-    <div className="flex w-fit h-[30px] mr-2 pr-1 bg-neutral-700 rounded-md">
+    <div className="flex items-center w-full h-[50px] pl-1">
       <input
         name="setsCount"
         key={`dnd-exericse-input-sets-${index}`}
@@ -26,7 +26,7 @@ export const LoadCell = ({ inputFieldRefs, selectedExercise, index }) => {
         value={ref.load.setsCount}
         onChange={handleChange}
       />
-      <div className="mt-auto pb-[2px] text-neutral-400 font-medium text-sm select-none pr-1">x</div>
+      <div className="text-neutral-700 font-medium text-sm select-none pr-1 pt-1">x</div>
       <input
         name="repsCount"
         key={`dnd-exericse-input-reps-${index}`}
@@ -35,7 +35,7 @@ export const LoadCell = ({ inputFieldRefs, selectedExercise, index }) => {
         value={ref.load.repsCount}
         onChange={handleChange}
       />
-      <div className="mt-auto pb-[2px] text-neutral-400 font-medium text-sm select-none pr-1">reizes</div>
+      <div className="text-neutral-700 font-medium text-sm select-none pr-1 pt-1">reizes</div>
     </div>
   )
 }

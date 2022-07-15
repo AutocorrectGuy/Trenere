@@ -8,7 +8,7 @@ export default function SearchBarDropdown({ setCurrentDropdownItem, dropdownOpti
   return (
     <div className="relative h-full">
       <button
-        className="flex items-center text-neutral-300 font-medium h-full px-2"
+        className="flex items-center text-neutral-300 font-normal h-full px-2"
         onClick={(e) => {
           e.preventDefault()
           setDropdownOpen(true)
@@ -24,13 +24,13 @@ export default function SearchBarDropdown({ setCurrentDropdownItem, dropdownOpti
               setDropdownOpen(false)
             }}
           />
-          <div className="absolute top-[40px] right-0 flex flex-col bg-neutral-700
-              shadow-md shadow-neutral-900">
+          <div className="absolute top-[40px] right-0 flex flex-col bg-white
+             shadow-md shadow-[#0000003d] rounded-md overflow-hidden">
             {
               dropdownOptions.map(({ label }, i) =>
                 <div
                   key={`dropdown-search-${i}`}
-                  className="px-4 py-2 hover:bg-neutral-600 cursor-pointer whitespace-nowrap"
+                  className="px-4 py-2 hover:bg-neutral-100 cursor-pointer font-normal whitespace-nowrap"
                   onClick={() => {
                     setDropdownOpen(false)
                     setCurrentDropdownItem(dropdownOptions.filter(item => item.label === label)[0])

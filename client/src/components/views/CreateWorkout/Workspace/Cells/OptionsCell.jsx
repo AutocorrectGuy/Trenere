@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBurger, faCog, faEllipsisV } from "@fortawesome/free-solid-svg-icons";
+import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 import OPTIONS from "../Options/DefaultOptions";
 
 
@@ -13,8 +13,8 @@ export const OptionsCell = ({ exerciseData }) => {
         <div className="fixed top-0 right-0 bottom-0 left-0 bg-transparent"
           onClick={() => setOpen(false)}
         />
-        <div className="z-20 absolute top-[44px] -right-2 flex flex-col border border-neutral-700
-          text-neutral-300 bg-[#343434] rounded-md shadow-lg shadow-neutral-900"
+        <div className="z-20 absolute top-[44px] right-0 flex flex-col border border-neutral-300
+          text-neutral-700 bg-white rounded-md shadow-md shadow-neutral-300 overflow-hidden"
         >
           {
             OPTIONS.map(({ Div, ul, icon }, i) =>
@@ -29,7 +29,7 @@ export const OptionsCell = ({ exerciseData }) => {
   }
   return (
     <div className="relative">
-      <div className="flex h-[30px] items-center justify-center pl-1 pt-[2px] cursor-pointer">
+      <div className="flex h-[50px] items-center justify-center cursor-pointer">
         <FontAwesomeIcon
           icon={faEllipsisV}
           className={"text-neutral-600 w-6 h-6"}

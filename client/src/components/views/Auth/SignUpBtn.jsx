@@ -3,15 +3,19 @@ import { faWindowClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 
-export default function SignUpBtn() {
+export default function SignUpBtn({className}) {
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
       <button
-        className="border border-neutral-400 hover:bg-pink-600 hover:border-pink-600 text-white active:bg-pink-600 font-medium uppercase 
-        px-4 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150
-        active:translate-y-[2px]"
+        className={`
+        border border-neutral-400 hover:bg-pink-600 hover:border-pink-600
+        text-white active:bg-pink-600 font-medium uppercase 
+        px-4 py-2 rounded shadow hover:shadow-lg outline-none
+        focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150
+        active:translate-y-[2px] 
+        ${className !== undefined && className}`}
         type="button"
         onClick={() => setShowModal(true)}
       >

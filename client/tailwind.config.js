@@ -5,6 +5,9 @@ module.exports = {
       fontFamily: {
         monsterrat: ["Montserrat", "sans-serif"],
       },
+      fontFamily: {
+        indie: ["Indie Flower", "cursive"],
+      },
     },
   },
 }
