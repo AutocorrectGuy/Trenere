@@ -19,7 +19,7 @@ const CreateWorkout = () => {
   const inputFieldRefs = useRef([])
 
   // feature states. Are switched in vertical navbr
-  const [searchOpen, setSarchOpen] = useState(true)
+  const [searchOpen, setSarchOpen] = useState(false)
   const [continueOpen, setContinueOpen] = useState(false)
 
   return (
